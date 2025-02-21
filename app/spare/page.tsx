@@ -33,7 +33,7 @@ const SpareProductPage = () => {
              {/* Product Image */}
              <div className="relative">
                <Image
-                 src={image || "/image/manitowoc.jpg"} 
+                 src={image || "/image/manitowoc.jpgs"} 
                  alt={name} 
                  className="w-full h-[500px] object-cover rounded-lg transition-transform transform hover:scale-105" 
                  width={500}
