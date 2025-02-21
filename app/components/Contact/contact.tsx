@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Globe, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
 import Button from "../ui/Button";
 
@@ -13,7 +13,7 @@ const SectionComponent = () => {
             Contact Us
           </h1>
           <p className="text-center font-normal text-[20px] leading-[30px] px-4 text-[#C8CED2]">
-            Have questions or need assistance? We're here to help! Reach out to
+            Have questions or need assistance? We&apos;re here to help! Reach out to
             us, and our team will get back to you promptly.
           </p>
         </div>
@@ -25,7 +25,7 @@ const SectionComponent = () => {
                   Get in Touch
                 </h1>
                 <p className="body-text max-w-[513px] text-[18px] leading-[30px] text-[#C8CED2]">
-                  We're here to help! Whether you have questions, or need more
+                  We&apos;re here to help! Whether you have questions, or need more
                   information, feel free to reach out to our team anytime.
                 </p>
               </div>

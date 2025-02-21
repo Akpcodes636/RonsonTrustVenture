@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Pause, Play } from 'lucide-react';
 import { Images } from "../utilis/contents/HomePage.content";
+import Image from 'next/image';
 
-interface SlideType {
-  image: string;
-  title: string;
-  text: string;
-}
+// interface SlideType {
+//   image: string;
+//   title: string;
+//   text: string;
+// }
 
 const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,13 +27,13 @@ const ImageCarousel = () => {
     setCurrentSlide(index);
   };
 
-  const previousSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + Images.length) % Images.length);
-  };
+  // const previousSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + Images.length) % Images.length);
+  // };
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % Images.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % Images.length);
+  // };
 
   const toggleAutoplay = () => {
     setIsPlaying(!isPlaying);
@@ -49,10 +50,12 @@ const ImageCarousel = () => {
               currentSlide === index ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
+              width={500}
+              height={500}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 text-white pt-56">

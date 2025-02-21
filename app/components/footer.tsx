@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Logo from "./ui/Logo";
 import Link from "next/link";
-import { Instagram, Mail, Phone, MapPin, Globe } from "lucide-react";
+import {Mail, Phone, MapPin, Globe } from "lucide-react";
 
 const Footer = () => {
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-[#ECECEC] py-12">

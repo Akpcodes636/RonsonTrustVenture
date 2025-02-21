@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function About() {
   return (
@@ -58,7 +58,7 @@ export default function About() {
           <div className="text-center p-6 bg-[#ECECEC] rounded-lg">
             <h3 className="text-2xl font-bold mb-4 text-[#1E2A38]">Customer Focus</h3>
             <p className="text-[#1E2A38]">
-              We prioritize understanding and meeting our clients' needs, offering
+              We prioritize understanding and meeting our clients&apos; needs, offering
               personalized support and solutions.
             </p>
           </div>

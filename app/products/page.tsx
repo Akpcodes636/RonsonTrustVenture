@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { Phone, Mail, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function SparePartsPage() {
   const router = useRouter();
@@ -59,7 +60,7 @@ export default function SparePartsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {manitowocParts.map((part) => (
             <div key={part.id} className="group bg-white shadow-md rounded-xl overflow-hidden border border-gray-200 hover:border-red-700 transition-all cursor-pointer transform hover:scale-105" onClick={() => router.push(`/spare?name=${encodeURIComponent(part.name)}`)}>
-              <img src={part.image} alt={part.name} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" />
+              <Image src={part.image} alt={part.name} className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105" width={500} height={500} />
               <div className="p-6">
                 <p className="text-gray-600 text-sm font-medium mb-2">{part.category}</p>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">{part.name}</h3>

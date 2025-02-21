@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { Carousel, initTWE } from "tw-elements";
+import Image from "next/image";
 
 const CarouselComponent = () => {
   useEffect(() => {
@@ -42,7 +43,7 @@ const CarouselComponent = () => {
           }
         ].map((slide, index) => (
           <div key={index} className={`relative float-left w-full opacity-0 transition-opacity duration-[600ms] ease-in-out motion-reduce:transition-none ${index === 0 ? 'data-twe-carousel-active' : ''}`} data-twe-carousel-fade data-twe-carousel-item>
-            <img src={slide.src} className="block w-full" alt={slide.label} />
+            <Image src={slide.src} className="block w-full" alt={slide.label} width={500} height={500} />
             <div className="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-black md:block">
               <h5 className="text-xl">{slide.label}</h5>
               <p>{slide.text}</p>

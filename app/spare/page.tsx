@@ -2,6 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Image from "next/image";
 
 const SpareProductPage = () => {
  const searchParams = useSearchParams();
@@ -31,10 +32,12 @@ const SpareProductPage = () => {
              
              {/* Product Image */}
              <div className="relative">
-               <img 
+               <Image
                  src={image || "/image/manitowoc.jpg"} 
                  alt={name} 
                  className="w-full h-[500px] object-cover rounded-lg transition-transform transform hover:scale-105" 
+                 width={500}
+                 height={500}
                />
              </div>
 
