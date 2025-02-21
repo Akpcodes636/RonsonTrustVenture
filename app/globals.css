@@ -19,3 +19,44 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.container-sm {
+  max-width: 1300px;
+  margin: 0 auto;
+  @apply px-2 sm:px-8;
+}
+
+.hero-bg {
+  background-image: url("/image/caterpillar2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.heading {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.body-text {
+  font-family: var(--font-source-sans), sans-serif;
+}
+
+.background {
+  background-image: url("/image/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.background-one {
+  background: linear-gradient(to right, rgba(12, 11, 9, 0.877), rgba(222, 218, 218, 0)), 
+              url("/image/oilrig.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.background-two {
+  background: linear-gradient(to right, rgba(12, 11, 9, 0.877), rgba(222, 218, 218, 0)), 
+              url("/image/oilrig2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
