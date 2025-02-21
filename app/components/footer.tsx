@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "./ui/Logo";
 import Link from "next/link";
 import {Mail, Phone, MapPin, Globe } from "lucide-react";
