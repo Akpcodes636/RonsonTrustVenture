@@ -1,10 +1,11 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Image from "next/image";
 
-const SpareProductPage = () => {
+const SpareProductPageContent = () => {
  const searchParams = useSearchParams();
  const name = searchParams.get("name");
  const partNumber = searchParams.get("partNumber");
@@ -89,5 +90,11 @@ const SpareProductPage = () => {
    </>
  );
 };
+
+const SpareProductPage = () => (
+ <Suspense fallback={<div className="text-center text-2xl font-bold text-[#E72418]">Loading...</div>}>
+   <SpareProductPageContent />
+ </Suspense>
+);
 
 export default SpareProductPage;
