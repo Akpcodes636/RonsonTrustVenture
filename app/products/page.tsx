@@ -10,7 +10,7 @@ export default function SparePartsPage() {
   const manitowocParts = [
     {
       id: "1",
-      name: "Manitowoc Crawler 4000 and 4100 Transmision parts",
+      name: "Manitowoc Crawler 4000 and 4100 Transmision partadd",
       Model:"3940W, 4100W",
       category: "Hydraulic Systems",
       availability: "In Stock",

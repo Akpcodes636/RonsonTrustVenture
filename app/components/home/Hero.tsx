@@ -3,12 +3,6 @@ import { Pause, Play } from 'lucide-react';
 import { Images } from "../utilis/contents/HomePage.content";
 import Image from 'next/image';
 
-// interface SlideType {
-//   image: string;
-//   title: string;
-//   text: string;
-// }
-
 const ImageCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -27,13 +21,6 @@ const ImageCarousel = () => {
     setCurrentSlide(index);
   };
 
-  // const previousSlide = () => {
-  //   setCurrentSlide((prev) => (prev - 1 + Images.length) % Images.length);
-  // };
-
-  // const nextSlide = () => {
-  //   setCurrentSlide((prev) => (prev + 1) % Images.length);
-  // };
 
   const toggleAutoplay = () => {
     setIsPlaying(!isPlaying);
