@@ -44,7 +44,7 @@ export default function Service() {
             </div>
             <div className="p-6 text-black">
               <h2 className="text-xl md:text-2xl font-semibold mb-3 text-center">Expert Consultation Tailored to Your Needs</h2>
-              <p className="text-center text-gray-700">Our team offers personalized advice to optimize your machinery's performance.</p>
+              <p className="text-center text-gray-700">Our team offers personalized advice to optimize your machinery&apos;s performance.</p>
             </div>
           </div>
           

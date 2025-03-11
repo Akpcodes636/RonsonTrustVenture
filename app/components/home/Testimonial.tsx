@@ -73,7 +73,7 @@ export default function Testimonial() {
                 className="text-lg md:text-xl text-gray-800 italic mb-6 transition-opacity duration-500"
                 key={current}
               >
-                "{testimonials[current].quote}"
+                {/* "{testimonials[current].quote}" */}
               </blockquote>
               
               {/* Customer info */}
