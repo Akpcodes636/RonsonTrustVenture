@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function FeaturedSections() {
   return (
@@ -14,7 +13,7 @@ export default function FeaturedSections() {
           </div>
           <div className="w-full md:w-3/5">
             <p className="text-black text-base md:text-lg">
-              We understand the importance of reliability in your machinery. That's why we offer a comprehensive selection of parts from leading brands. Our commitment to quality ensures your equipment runs smoothly, minimizing downtime.
+              We understand the importance of reliability in your machinery. That&apos;s why we offer a comprehensive selection of parts from leading brands. Our commitment to quality ensures your equipment runs smoothly, minimizing downtime.
             </p>
           </div>
         </div>

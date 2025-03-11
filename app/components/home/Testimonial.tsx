@@ -6,12 +6,12 @@ export default function Testimonial() {
   // Array of testimonials
   const testimonials = [
     {
-      quote: "The quality of the parts we received was exceptional, and the service was prompt and professional! We couldn't be happier with our experience.",
+      quote: "The quality of the parts we received was exceptional, and the service was prompt and professional! We couldn&apos;t be happier with our experience.",
       name: "John Doe",
       title: "Manager, XYZ Corp"
     },
     {
-      quote: "We've been working with this company for years, and they've never let us down. Their parts are reliable and their team is knowledgeable.",
+      quote: "We&apos;ve been working with this company for years, and they've never let us down. Their parts are reliable and their team is knowledgeable.",
       name: "Jane Smith",
       title: "Operations Director, ABC Industries"
     },

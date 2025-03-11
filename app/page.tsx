@@ -1,5 +1,4 @@
 "use client";
-import Header from "./components/header";
 import About from "./components/home/About";
 import Hero from "./components/home/Hero";
 import Why from "./components/home/Why";
