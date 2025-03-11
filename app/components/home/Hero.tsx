@@ -1,91 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { Pause, Play } from 'lucide-react';
-import { Images } from "../utilis/contents/HomePage.content";
-import Image from 'next/image';
+"use client";
+import Header from "../header";
+import Button from "../ui/Button";
 
-const ImageCarousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isPlaying) {
-      interval = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % Images.length);
-      }, 5000);
-    }
-    return () => clearInterval(interval);
-  }, [isPlaying]);
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-
-
-  const toggleAutoplay = () => {
-    setIsPlaying(!isPlaying);
-  };
-
+export default function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Carousel items */}
-      <div className="relative w-full h-full">
-        {Images.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute w-full h-full transition-opacity duration-600 ease-in-out ${
-              currentSlide === index ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              className="w-full h-full object-cover"
-              width={500}
-              height={500}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50" />
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 text-white pt-56">
-              <h2 className="text-[40px] md:text-[64px] lg:text-[80px] font-bold mb-2 leading-tight heading tracking-[1.33px]">
-                {slide.title}
-              </h2>
-              <p className="text-[18px] md:text-[20px] lg:text-[25px] mb-4 body-text">
-                {slide.text}
-              </p>
-            </div>
+    <section className="min-h-screen bg-stone-400 background">
+      <div className="pt-[30px] md:pt-[50px] lg:pt-[70px]">
+        <Header />
+      </div>
+      <div className="pt-72 md:pt-96 lg:pt-80 container-sm mx-auto">
+        <div className="flex items-center justify-center max-w-[1041px] mx-auto text-center flex-col">
+          <h1 className="text-[28px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold tracking-[0.5%] text-white mb-[16px] md:mb-[24px] lg:mb-[32px]">
+            <span className="border-b-4 border-[#B81A14]">Roson</span>– Genuine Manitowoc Spare Parts Dealer, Trusted & Reliable
+          </h1>
+          <p className="text-[16px] md:text-[18px] lg:text-[20px] font-normal leading-[24px] md:leading-[28px] lg:leading-[32px] text-white max-w-[650px] mx-auto mb-[24px] md:mb-[32px] lg:mb-[40px]">
+            Your trusted source for high-quality Manitowoc spare parts, built
+            for durability and performance.
+          </p>
+          <div>
+            <Button
+              style="primary"
+              css="w-[120px] md:w-[150px] lg:w-[182px] h-[40px] md:h-[48px] rounded-[5px]"
+            >
+              Order Now
+            </Button>
           </div>
-        ))}
+        </div>
       </div>
-
-      {/* Carousel indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
-        {Images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`mx-1 h-3 w-8 rounded-sm transition-all duration-300 ${
-              currentSlide === index ? 'bg-white' : 'bg-white/50'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-
-   
-      {/* Play/Pause button */}
-      <button
-        onClick={toggleAutoplay}
-        className="absolute bottom-8 right-8 z-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-3 rounded-full transition-all duration-300"
-        aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
-      >
-        {isPlaying ? (
-          <Pause className="w-6 h-6 text-white" />
-        ) : (
-          <Play className="w-6 h-6 text-white" />
-        )}
-      </button>
-    </div>
+    </section>
   );
-};
-
-export default ImageCarousel;
+}

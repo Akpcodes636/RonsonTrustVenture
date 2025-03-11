@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
         flex items-center justify-center
         ${
           style === "primary"
-            ? "bg-[#E72418] shadow-[0px_4px_8px_1px_#0094D233] body-text"
+            ? "bg-[#B81A14] text-white"
             : ""
         }
         ${

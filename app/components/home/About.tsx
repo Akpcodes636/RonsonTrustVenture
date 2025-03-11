@@ -4,56 +4,70 @@ import Link from "next/link";
 
 export default function FeaturedSections() {
   return (
-    <section className="py-16 bg-[#ECECEC]">
+    <section className="py-12 md:py-16 bg-[#ECECEC]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-          {/* First Card */}
-          <Link href="/About" className="w-full md:w-1/2 max-w-[610px] group">
-            <div className="relative w-full h-[450px] sm:h-[500px] md:h-[595px] overflow-hidden bg-blue-900 transition-transform duration-300">
-              <Image
-                src="/image/caterpillar3.jpg"
-                alt="Global Investment Solutions"
-                width={800}
-                height={500}
-                className="object-cover w-full h-full brightness-50 transition-all duration-300 group-hover:brightness-40"
-              />
-              <div className="absolute inset-0 p-2 sm:p-10 flex flex-col justify-end text-white">
-                <h2 className="text-xl lg:text-2xl sm:text-3xl font-bold mb-4 heading">
-                  Global Spare Parts Solutions
-                </h2>
-                <p className="text-lg sm:text-xl mb-6 body-text">
-                  Ronson Trust Ventures is a leading provider of high-quality spare parts, ensuring businesses around the world have access to reliable components for their operations. From automotive to industrial machinery, we specialize in sourcing and distributing essential parts with efficiency and precision.
-                </p>
-                <span className="text-base sm:text-lg font-semibold group-hover:underline">
-                  Where we operate →
-                </span>
-              </div>
-            </div>
-          </Link>
+        {/* Heading Section */}
+        <div className="flex flex-col md:flex-row md:items-center gap-6 mb-20">
+          <div className="w-full md:w-2/5">
+            <p className="font-semibold text-lg md:text-xl text-black mb-2">Dependable</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-black">Your Trusted Source for Quality Parts</h1>
+          </div>
+          <div className="w-full md:w-3/5">
+            <p className="text-black text-base md:text-lg">
+              We understand the importance of reliability in your machinery. That's why we offer a comprehensive selection of parts from leading brands. Our commitment to quality ensures your equipment runs smoothly, minimizing downtime.
+            </p>
+          </div>
+        </div>
 
-          {/* Second Card */}
-          <Link href="/About" className="w-full md:w-1/2 max-w-[610px] group">
-            <div className="relative w-full h-[450px] sm:h-[500px] md:h-[595px] overflow-hidden bg-yellow-700 transition-transform duration-300">
-              <Image
-                src="/image/caterpillar4.jpg"
-                alt="Investment Excellence"
-                width={800}
-                height={500}
-                className="object-cover w-full h-full brightness-50 transition-all duration-300 group-hover:brightness-40"
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Blue Card */}
+          <div className="overflow-hidden">
+            <div className="relative h-64">
+              <Image 
+                src="/image/background.jpg" 
+                alt="Extensive range of parts" 
+                fill
+                className="object-cover"
               />
-              <div className="absolute inset-0 p-2 sm:p-10 flex flex-col justify-end text-white">
-                <h2 className="text-xl lg:text-2xl sm:text-3xl font-bold mb-4 heading">
-                  Excellence in Supply & Distribution
-                </h2>
-                <p className="text-lg sm:text-xl mb-6 body-text">
-                  With a vast network and a commitment to excellence, Ronson Trust Ventures delivers tailored spare parts solutions to meet the diverse needs of industries worldwide. Our expertise in logistics and procurement guarantees seamless distribution across multiple sectors.
-                </p>
-                <span className="text-base sm:text-lg font-semibold group-hover:underline">
-                  Our solutions →
-                </span>
-              </div>
             </div>
-          </Link>
+            <div className="p-2 text-black">
+              <h2 className="text-xl md:text-3xl font-semibold mb-4">Extensive Range of Quality Parts Available</h2>
+              <p>From JCB to Caterpillar, we have it all.</p>
+            </div>
+          </div>
+
+          {/* Yellow Card */}
+          <div className="overflow-hidden">
+            <div className="relative h-64">
+              <Image 
+                src="/image/background.jpg" 
+                alt="Expert knowledge" 
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-2 text-black">
+              <h2 className="text-xl md:text-3xl font-semibold mb-4">Expert Knowledge to Assist You</h2>
+              <p>Our team is here to help you find exactly what you need.</p>
+            </div>
+          </div>
+
+          {/* Red Card */}
+          <div className="overflow-hidden">
+            <div className="relative h-64">
+              <Image 
+                src="/image/background.jpg" 
+                alt="Quality service" 
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-2 text-black">
+              <h2 className="text-xl md:text-3xl font-semibold mb-4 leading-6">Quality You Can Trust, Service You Deserve</h2>
+              <p>Experience exceptional service with every order.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

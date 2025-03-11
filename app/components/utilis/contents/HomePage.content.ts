@@ -4,16 +4,16 @@
     router:"/"
  },
  {
-    title:"About Us",
-    router:"/About"
+    title:"Product",
+    router:"/Products"
  },
  {
-  title:"Contact Us",
-  router:"/Contact"
+  title:"About Us",
+  router:"/About"
  },
  {
-    title:"Spare part",
-    router:"/products"
+    title:"Contact",
+    router:"/Contact"
  }
 ]
 

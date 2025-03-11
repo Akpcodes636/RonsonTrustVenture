@@ -12,7 +12,7 @@ const Logo: FC = () => {
           height={200}
           width={200}
           alt="logo"
-          className="h-[110px] w-[110px] object-contain"
+          className="h-[100px] w-[100px] object-contain"
         />
       </div>
         </Link>
