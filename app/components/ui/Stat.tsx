@@ -5,11 +5,11 @@ import { PiGearSixFill } from "react-icons/pi";
 import { MdEmojiEmotions } from "react-icons/md";
 
 // Map icon names to their components
-const iconComponents = {
-  Clock: FaClock,
-  Settings: PiGearSixFill,
-  Users: MdEmojiEmotions,
-};
+// const iconComponents = {
+//   Clock: FaClock,
+//   Settings: PiGearSixFill,
+//   Users: MdEmojiEmotions,
+// };
 
 interface StatsProps {
   // Remove the icon prop since we'll use the one from PartContent

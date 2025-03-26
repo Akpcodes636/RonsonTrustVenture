@@ -19,7 +19,7 @@ const TestimonialCard: FC<TestimonialProps> = ({
     <div className="w-full max-w-[393px] bg-white rounded-[5px] shadow-[0px_8px_16px_0px_#00000026;] mx-auto p-6">
       <div className="mb-4">
         <span className="text-[50px] text-[#555555] leading-[0.5] block mb-2">
-          "
+          &quot;
         </span>
         <p className="text-[#555555] text-base lg:text-lg leading-[1.5] tracking-wide mb-4">
           {text}

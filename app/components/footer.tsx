@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Logo from "./ui/Logo";
+
 import Link from "next/link";
 import {
-  Instagram,
   Mail,
   Phone,
   MapPin,
   Globe,
   ChevronDown,
 } from "lucide-react";
-import { RiTwitterXFill } from "react-icons/ri";
-import { FaFacebook } from "react-icons/fa";
+
 
 import { ReactNode } from "react";
 import Image from "next/image";

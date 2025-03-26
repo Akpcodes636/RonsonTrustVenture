@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
 import { About } from "../utilis/contents/HomePage.content";
+import Icon from "../ui/Icon";
 
 export default function WhyChooseUs() {
   return (
-    <section className="pt-[70px] lg:pt-[130px] pb-[96px] lg:pb-[160px]">
+    <section className="pt-[70px] lg:pt-[130px] pb-[96px] lg:pb-[160px] relative">
       <div className="container-sm mx-auto">
+      <Icon image="/image/Bolt.svg" direction="left" className="right-0 top-10"  />
+      <Icon image="/image/Vehicle.svg" direction="left" className="left-0 bottom-0"  />
         <h1 className="font-semibold text-[22px] leading-[130%] text-[#000000] lg:text-[30px] lg:leading-[100%] text-center mb-[40px]">
           Why Choose Ronson Trust Venture?
         </h1>

@@ -7,6 +7,7 @@ export default function FeaturedProducts() {
   return (
     <section className="pt-[120px] pb-[20px] lg:pt-[180px] lg:pb-[50px] bg-white relative">
       <Icon image="/image/Vector.svg" direction="left" className="right-0 top-16"  />
+      <Icon image="/image/Plane.svg" direction="left" className="left-0 top-[58%]"  />
       <div className="container-sm mx-auto">
         <div>
           <h2 className="font-semibold text-[22px] lg:text-[30px] lg:leading-[100%] leading-[130%] text-center mb-[40px]">
