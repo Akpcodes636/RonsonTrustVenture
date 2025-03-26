@@ -120,6 +120,7 @@ const SectionComponent = () => {
                 </div>
                 <div className="flex justify-center md:justify-start lg:justify-start">
                   <Button
+                   type="button"
                     css="w-[288px] h-[56px] flex items-center justify-center bg-[#E72418] hover:bg-[#E72418]/90 text-white"
                     style="primary"
                   >
