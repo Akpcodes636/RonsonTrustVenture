@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { FaClock } from "react-icons/fa";
-import { PiGearSixFill } from "react-icons/pi";
-import { MdEmojiEmotions } from "react-icons/md";
+// import { FaClock } from "react-icons/fa";
+// import { PiGearSixFill } from "react-icons/pi";
+// import { MdEmojiEmotions } from "react-icons/md";
 
 // Map icon names to their components
 // const iconComponents = {
