@@ -23,7 +23,7 @@ body {
 .container-sm {
   max-width: 1300px;
   margin: 0 auto;
-  @apply px-2 sm:px-8;
+  @apply px-4 sm:px-8;
 }
 
 .hero-bg {
@@ -42,17 +42,43 @@ body {
 
 /* .background{
   background: linear-gradient(to right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5)),
-    url("/image/HeroImage.png");
+    url("image/HeroImage.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #000000BF;
-} */
+}  */
 
-.background {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("/image/HeroImage.png");
+.mobile-bg {
+ background-image: url("/image/BGImage.svg");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+
+.desktop-bg {
+  background-image: url("/image/Rectangle.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* .background {
+  background: url("/image/HeroImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+
+
+/* In globals.css or other stylesheets */
+.heading {
+  font-family: var(--font-inter);
+  font-weight: 700;
+}
+
+.body-text {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
 }

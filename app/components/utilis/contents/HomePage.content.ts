@@ -1,58 +1,93 @@
- export const NavLinks = [
- {
-    title:"Home",
-    router:"/"
- },
- {
-    title:"Product",
-    router:"/Products"
- },
- {
-  title:"About Us",
-  router:"/About"
- },
- {
-    title:"Contact",
-    router:"/Contact"
- }
-]
+export const NavLinks = [
+  {
+    title: "Home",
+    router: "/",
+  },
+  {
+    title: "Product",
+    router: "/Products",
+  },
+  {
+    title: "About Us",
+    router: "/About",
+  },
+  {
+    title: "Contact",
+    router: "/Contact",
+  },
+];
 
 export const Images = [
-    {
-        image:"/image/caterpillar.jpg",
-        title:"Welcome to Ronson",
-        text:"Delivering decades of excellence in heavy machinery parts and equipment supply."
-    },
-    {
-        image:"/image/caterpillar2.jpg",
-        title:"Heavy machinery spare parts",
-        text:"Premium-quality genuine and aftermarket parts available at great prices, shipped globally."
-    },
-    {
-        image:"/image/company.jpg",
-        title:"Premium Spare Parts",
-        text:"We supply JCB, Caterpillar, Bobcat, Volvo, Komatsu & Tapco parts."
-    }
-]
+  {
+    image: "/image/caterpillar.jpg",
+    title: "Welcome to Ronson",
+    text: "Delivering decades of excellence in heavy machinery parts and equipment supply.",
+  },
+  {
+    image: "/image/caterpillar2.jpg",
+    title: "Heavy machinery spare parts",
+    text: "Premium-quality genuine and aftermarket parts available at great prices, shipped globally.",
+  },
+  {
+    image: "/image/company.jpg",
+    title: "Premium Spare Parts",
+    text: "We supply JCB, Caterpillar, Bobcat, Volvo, Komatsu & Tapco parts.",
+  },
+];
 
-export const AboutContent=[
-    {
-        text: "Supply of high-quality industrial spare parts and components",
-      },
-      {
-        text: "Strategic sourcing and procurement solutions",
-      },
-      {
-        text: "Quality assurance and certification",
-      },
-      {
-        text: "Efficient supply chain management",
-      },
-      {
-        text: "Expert technical consultation for spare parts",
-      },
-      {
-        text: "Comprehensive inventory management solutions",
-      }
-]
+export const AboutContent = [
+  {
+    text: "Supply of high-quality industrial spare parts and components",
+  },
+  {
+    text: "Strategic sourcing and procurement solutions",
+  },
+  {
+    text: "Quality assurance and certification",
+  },
+  {
+    text: "Efficient supply chain management",
+  },
+  {
+    text: "Expert technical consultation for spare parts",
+  },
+  {
+    text: "Comprehensive inventory management solutions",
+  },
+];
 
+export const PartContent = [
+  {
+    title: "20 +",
+    text: "Years Experience",
+    icon: "Clock",
+  },
+  {
+    title: "5000 +",
+    text: "Spare Parts Supplied",
+    icon: "Settings",
+  },
+  {
+    title: "100 +",
+    text: "Satisfied Clients",
+    icon: "Users",
+  },
+];
+
+export const About = [
+  {
+    image: "/image/Handshake.png",
+    title: "Reliability & Expertise",
+    text: "Our dedicated team has the expertise to not only meet but exceed your expectations, ensuring high-quality service delivery that aligns with your business needs.",
+  },
+  {
+    image: "/image/ribbon.png",
+    title: "Quality Assurance",
+    text: "We ensure that every product and service meets industry standard. Our policies prioritize thorough evaluations to guarantee compliance with customer requirements.",
+  },
+  {
+    image: "/image/Vest.png",
+    title: "HSE Compliance",
+    text: "Safety is our priority. We are committed to protecting our personnel, equipment, and the communities where we operate, ensuring an accident-free project delivery.",
+  },
+];

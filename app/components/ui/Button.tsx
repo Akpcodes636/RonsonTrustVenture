@@ -3,6 +3,7 @@ import React from "react";
 interface ButtonProps {
   children: React.ReactNode;
   fn?: () => void;
+  type: "button" | "submit" | "reset"; // Can be 'button', 'submit', or 'reset'
   loading?: boolean;
   disabled?: boolean;
   style: "primary" | "secondary" | string;
@@ -16,11 +17,13 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   style,
   css,
+  type
 }) => {
   return (
     <button
       onClick={fn}
       disabled={loading || disabled}
+      type={type}
       className={`
         flex items-center justify-center
         ${

@@ -9,10 +9,10 @@ const Logo: FC = () => {
              <div className="">
         <Image
           src="/image/logo1.png"
-          height={200}
-          width={200}
+          height={50}
+          width={50}
           alt="logo"
-          className="h-[100px] w-[100px] object-contain"
+          className="h-[49px]  w-[45px] lg:h-[76px] lg:w-[71px] object-contain"
         />
       </div>
         </Link>
