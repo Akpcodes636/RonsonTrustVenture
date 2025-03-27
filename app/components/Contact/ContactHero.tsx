@@ -12,7 +12,7 @@ export default function ContactHero() {
             Contact Us
           </h2>
           <h1 className="heading text-[28px] font-semibold leading-[36px] lg:text-[32px] lg:leading-[130%] mb-[8px] lg:mb-[16px] text-[#FFFFFF] ">
-            We're here to help and support you!
+            We&apos;re here to help and support you!
           </h1>
         </div>
       </div>
