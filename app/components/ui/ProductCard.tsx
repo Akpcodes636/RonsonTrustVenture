@@ -11,7 +11,7 @@ interface ProductProps {
 
 const ProductCard: React.FC<ProductProps> = ({ title, text, image, price }) => {
   return (
-    <div className="shadow-[0_4px_8px_0_rgba(0,0,0,0.08)] h-[369px] lg:h-[456px]">
+    <div className="shadow-[0_4px_8px_0_rgba(0,0,0,0.08)] min-h-[369px] md:min-h-[550px] lg:min-h-[456px]">
       <div className="rounded-[5px] mx-auto overflow-hidden">
         <Image
           src={image}

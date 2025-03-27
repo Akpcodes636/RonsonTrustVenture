@@ -8,11 +8,11 @@ import { MdEmojiEmotions } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <section className="mobile-bg lg:desktop-bg relative">
+    <section className="mobile-bg lg:desktop-bg relative ">
       <div className="min-h-[70vh] lg:min-h-[100vh] 2xl:min-h-[100vh] container-sm mx-auto">
         <Header />
 
-        <div className="pt-[165px] lg:pt-[262px] mx-auto min-w-[355px] lg:max-w-[1041px]">
+        <div className="pt-[165px] lg:pt-[262px] mx-auto  max-w-[355px] lg:max-w-[1041px]">
           <h1 className="text-[#FFFFFF] font-medium lg:font-bold text-[28px] lg:text-[60px] lg:leading-[110%] leading-9 text-center mb-[24px]">
             {" "}
             <span className="border-b-4 border-[#B81A14]">Roson</span> – Genuine
@@ -33,7 +33,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute left-0 right-0 bottom-[-80px] lg:bottom-[-90px] 2xl:bottom-[-80px] max-w-[358px] lg:max-w-[1028px] lg:min-h-[176px] min-h-[96px] bg-white mx-auto rounded-[5px] shadow-[0px_4px_8px_0px_#00000014;] z-30 ">
+        <div className="absolute left-0 right-0 bottom-[-80px] lg:bottom-[-90px] 2xl:bottom-[-80px] max-w-[358px] md:max-w-[600px] lg:max-w-[1028px] lg:min-h-[176px] min-h-[96px] bg-white mx-auto rounded-[5px] shadow-[0px_4px_8px_0px_#00000014;] z-30 ">
           <div className="px-4 py-4 lg:py-[33px] lg:px-[134px]">
             <div className="flex items-center justify-center gap-x-[24px] lg:gap-x-[180px]">
               <Stats title="20+" text="Years Experience" icon={FaClock} />

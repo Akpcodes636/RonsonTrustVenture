@@ -12,9 +12,9 @@ export default function WhyChooseUs() {
         <h1 className="font-semibold text-[22px] leading-[130%] text-[#000000] lg:text-[30px] lg:leading-[100%] text-center mb-[40px]">
           Why Choose Ronson Trust Venture?
         </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[64px] gap-x-[75px] place-content-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[64px] gap-x-[150px]">
           <div className="flex items-start justify-start">
-            <div className="w-[358px] h-[320px] lg:h-full lg:w-[571px]">
+            <div className="w-[358px] h-[320px] lg:min-h-[666px] lg:min-w-[651px]">
               <Image
                 src="/image/About.png"
                 width={500}

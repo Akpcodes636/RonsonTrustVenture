@@ -1,3 +1,7 @@
+import { title } from "process";
+// import { FaClock } from "react-icons/fa";
+
+
 export const NavLinks = [
   {
     title: "Home",
@@ -91,3 +95,21 @@ export const About = [
     text: "Safety is our priority. We are committed to protecting our personnel, equipment, and the communities where we operate, ensuring an accident-free project delivery.",
   },
 ];
+
+export const OurValues = [
+  {
+    title: "Quality First",
+    text: "We maintain the highest standards in our product selection and service delivery, ensuring every component meets industry specifications.",
+  },
+  {
+    title: "Global Reach",
+    text: "Our extensive network allows us to serve clients worldwide, providing efficient solutions regardless of location.",
+  },
+  {
+    title: "Customer Focus",
+    text: "We prioritize understanding and meeting our clients' needs, offering personalized support and solutions.",
+  },
+];
+
+
+

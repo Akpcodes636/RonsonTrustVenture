@@ -6,8 +6,8 @@ import Button from "../ui/Button";
 
 const SectionComponent = () => {
   return (
-    <section className="pt-52 bg-[#1E2A38]">
-      <div className="container mx-auto min-h-screen">
+    <section className="pt-52">
+      <div className="container-sm mx-auto min-h-screen">
         <div className="mb-[80px]">
           <h1 className="text-center font-semibold text-[30px] leading-[45px] mb-[16px] text-white">
             Contact Us
