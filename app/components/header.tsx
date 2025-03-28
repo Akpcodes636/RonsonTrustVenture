@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Logo from "./ui/Logo";
 import { NavLinks } from "./utilis/contents/HomePage.content";

@@ -28,16 +28,16 @@ export const BannerContents = [
 
 export default function ShowcaseBanner() {
   return (
-    <section className="pt-[60px] lg:pt-[80px] pb-[40px] lg:pb-[100px] relative flex justify-center">
+    <section className="pt-[60px] lg:pt-[80px] pb-[40px] lg:pb-[100px] relative flex justify-center w-full">
       <Icon
         image="/image/Plane.svg"
         direction="left"
         className="absolute left-0 top-7"
       />
-      <div className="container-sm mx-auto">
+      <div className="container-sm mx-auto w-full">
         <div className="lg:bg-[#B81A14] rounded-[10px] lg:h-[184px] flex items-center justify-center">
-          <div className="lg:py-[37px] lg:px-[126px] w-full">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-[16px] gap-y-[16px] lg:gap-x-[153px] place-items-center">
+          <div className="lg:py-[37px] lg:px-[126px]">
+            <div className="grid grid-cols-2 w-full md:grid-cols-4 lg:grid-cols-4 gap-x-[16px] gap-y-[16px] lg:gap-x-[153px] place-items-center">
               {BannerContents.map((p, i) => (
                 <div className="h-full w-full" key={i}>
                   <div className="w-full h-full rounded-[10px]  bg-[#B81A14] py-[29px] px-[28px] lg:py-0 lg:px-0">

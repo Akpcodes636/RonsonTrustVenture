@@ -14,14 +14,14 @@ export default function ContactForm() {
         className="right-0 top-0 hidden lg:block"
       />
       <div className="container-sm mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[96px] items-center -mt-52 lg:-mt-28 2xl:-mt-52 mb-[96px] lg:mb-[160px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[96px] items-center -mt-52 lg:-mt-28">
           {/* Contact Information Section */}
 
           <div className="w-full h-full order-1 shadow-[0px_4px_16px_1px_#00000014]">
             <Icon
               image="/image/Bolt.svg"
               direction="left"
-              className="right-0 top-[60%] lg:top-[40%]"
+              className="right-0 top-[50%]"
             />
             <div className="w-full min-h-[400px] lg:h-full p-[41px] lg:p-[80px_50px_214px] bg-[#F8E8E8] rounded-[5px]">
               <div>
