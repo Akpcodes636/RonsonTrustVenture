@@ -4,9 +4,10 @@ import ProductCard from "../ui/ProductCard";
 import Icon from "../ui/Icon"; // Adjust the path based on the actual location of the Icon component
 
 export default function FeaturedProducts() {
+
   return (
     <section className="pt-[120px] pb-[20px] lg:pt-[180px] lg:pb-[50px] bg-white relative">
-      <Icon image="/image/Vector.svg" direction="left" className="right-0 top-16"  />
+      <Icon image="/image/Vector.svg" direction="left" className="right-0 top-[40px]"  />
       <Icon image="/image/Plane.svg" direction="left" className="left-0 top-[58%]"  />
       <div className="container-sm mx-auto">
         <div>

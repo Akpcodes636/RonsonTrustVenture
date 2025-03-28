@@ -1,7 +1,6 @@
 "use client";
 import TestimonialCard from "../ui/TestCard";
 
-
 export default function Testimonial() {
   return (
     <section className="pt-[96px] pb-[96px] lg:pt-[120px] lg:pb-[160px]">
@@ -11,19 +10,19 @@ export default function Testimonial() {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-[32px] gap-x-[30px]">
           <TestimonialCard
-            name="John Doe"
-            text="Ronson exceeded my expectations! Their genuine Manitowoc spare parts are top quality, and delivery was fast. Our equipment runs smoothly thanks to their reliability!"
+            name="Head of Operations"
+            text="Ronson Trust Ventures consistently delivers high-quality parts with impressive speed. When dealing with the demanding requirements of offshore projects, like those we undertake with Aveon Offshore, this reliability is paramount."
             image="/image/John.png"
-            role="Heavy Machinery Operator"
+            role="Aveon Offshore"
           />
           <TestimonialCard
-            name="John Doe"
-            text="Ronson exceeded my expectations! Their genuine Manitowoc spare parts are top quality, and delivery was fast. Our equipment runs smoothly thanks to their reliability!"
+            name="Manager"
+            text="Ronson Trust Ventures has proven to be a reliable partner, ensuring our operations run smoothly and efficiently. We highly recommend them for their dedication and professionalism."
             image="/image/John.png"
-            role="Heavy Machinery Operator"
+            role="Globestar Company Limited"
           />
           <TestimonialCard
-            name="John Doe"
+            name="Client"
             text="Ronson exceeded my expectations! Their genuine Manitowoc spare parts are top quality, and delivery was fast. Our equipment runs smoothly thanks to their reliability!"
             image="/image/John.png"
             role="Heavy Machinery Operator"

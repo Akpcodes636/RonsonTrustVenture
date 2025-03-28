@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[64px] gap-x-[150px]">
           <div className="flex items-start justify-start">
-            <div className="w-[358px] h-[320px] lg:min-h-[666px] lg:min-w-[651px]">
+            <div className="w-[358px] h-[320px]  lg:min-h-[666px] lg:min-w-[651px] mx-auto">
               <Image
                 src="/image/About.png"
                 width={500}

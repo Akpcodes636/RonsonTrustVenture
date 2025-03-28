@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Button from "../ui/Button"; // Ensure the path is correct
+import { useRouter } from "next/navigation";
 
 interface ProductProps {
   title: string;
@@ -10,6 +11,13 @@ interface ProductProps {
 }
 
 const ProductCard: React.FC<ProductProps> = ({ title, text, image, price }) => {
+  const router = useRouter();
+
+  const goToProductPage = () => {
+    // Navigate to the product detail page using the product's ID
+    router.push("/product");
+  };
+
   return (
     <div className="shadow-[0_4px_8px_0_rgba(0,0,0,0.08)] min-h-[369px] md:min-h-[550px] lg:min-h-[456px]">
       <div className="rounded-[5px] mx-auto overflow-hidden">
@@ -36,6 +44,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, text, image, price }) => {
             style="primary"
             css="w-[134px] h-[48px] lg:w-[182px] lg:h-[48px]"
             type="button"
+            fn={goToProductPage}
           >
             Buy Now
           </Button>

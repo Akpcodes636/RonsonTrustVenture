@@ -16,7 +16,7 @@ const TestimonialCard: FC<TestimonialProps> = ({
   role 
 }) => {
   return (
-    <div className="w-full max-w-[393px] bg-white rounded-[5px] shadow-[0px_8px_16px_0px_#00000026;] mx-auto p-6">
+    <div className="w-full max-w-[393px] bg-white rounded-[5px] shadow-[0px_8px_16px_0px_#00000026;] mx-auto p-6 flex items-center justify-between flex-col">
       <div className="mb-4">
         <span className="text-[50px] text-[#555555] leading-[0.5] block mb-2">
           &quot;
@@ -28,7 +28,7 @@ const TestimonialCard: FC<TestimonialProps> = ({
           <StarRating count={5} />
         </div>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-between  space-x-4 w-full">
         <div className="relative w-12 h-12">
           <Image
             src={image}

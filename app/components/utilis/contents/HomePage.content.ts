@@ -8,7 +8,7 @@ export const NavLinks = [
   },
   {
     title: "Product",
-    router: "/Products",
+    router: "/Product",
   },
   {
     title: "About Us",
