@@ -16,8 +16,8 @@ const Header = () => {
   return (
     <>
       <header className="container-sm mx-auto">
-        <div className="">
-          <div className="flex items-center justify-between bg-[#00000069] backdrop-blur-xl max-w-[359px] md:max-w-[700px] lg:max-w-[1240px] h-[56px] lg:h-[96px] rounded-full fixed left-0 right-0 top-[30px] mx-auto px-7 lg:px-14 z-50 ">
+        <div className="px-10">
+          <div className="flex items-center justify-between bg-[#00000069] backdrop-blur-xl max-w-[90%] md:max-w-[700px] lg:max-w-[1240px] h-[56px] lg:h-[96px] rounded-full fixed inset-x-0 top-[30px] mx-auto px-5 lg:px-14 z-50">
             <div>
               <Logo />
             </div>

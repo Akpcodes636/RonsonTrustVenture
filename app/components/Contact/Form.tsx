@@ -7,14 +7,14 @@ import Icon from "../ui/Icon";
 
 export default function ContactForm() {
   return (
-    <section className="min-h-screen  relative">
+    <section className="relative">
       <Icon
         image="/image/Bolt.svg"
         direction="left"
         className="right-0 top-0 hidden lg:block"
       />
       <div className="container-sm mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[96px] items-center -mt-52 lg:-mt-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[96px] items-center">
           {/* Contact Information Section */}
 
           <div className="w-full h-full order-1 shadow-[0px_4px_16px_1px_#00000014]">
