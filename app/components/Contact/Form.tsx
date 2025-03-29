@@ -16,7 +16,7 @@ export default function ContactForm() {
               <div>
                 <div className="mb-[16px] text-center lg:text-start">
                   <h2 className="heading text-[24px] lg:text-[26px] leading-[130%] mb-[8px] text-[#B81A14]">
-                    Get in Touch
+                    Get in Touch.
                   </h2>
                   <p className="body-text text-[16px] text-[#727272] leading-[24px] lg:leading-[150%]">
                     We&apos;re here to answer your questions and assist you.
