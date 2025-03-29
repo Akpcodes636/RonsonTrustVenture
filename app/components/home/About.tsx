@@ -4,11 +4,19 @@ import Button from "../ui/Button";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRouter } from "next/navigation";
 
 export default function About() {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const router = useRouter();
+
+  const goToAboutPage = () => {
+    // Navigate to the product detail page using the product's ID
+    router.push("/About");
+  };
 
   return (
     <section className="bg-[#050101]">
@@ -51,6 +59,7 @@ export default function About() {
                 style="primary"
                 type="button"
                 css="w-[182px] h-[48px] bg-[#B81A14] text-white rounded-[5px]"
+                fn={goToAboutPage}
               >
                 Explore More
               </Button>

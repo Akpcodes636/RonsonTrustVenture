@@ -24,7 +24,7 @@ export default function Hero() {
             data-aos="fade-up"
             className="text-[#FFFFFF] font-medium lg:font-bold text-[28px] lg:text-[60px] lg:leading-[110%] leading-9 text-center mb-[24px]"
           >
-            <span className="border-b-4 border-[#B81A14]">Roson</span> – Genuine
+            <span className="border-b-4 border-[#B81A14]">Ronson</span> – Genuine
             Manitowoa Spare Parts Dealer, Trusted & Reliable
           </h1>
           <p
