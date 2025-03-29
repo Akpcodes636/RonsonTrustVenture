@@ -7,22 +7,12 @@ import Icon from "../ui/Icon";
 
 export default function ContactForm() {
   return (
-    <section className="relative">
-      <Icon
-        image="/image/Bolt.svg"
-        direction="left"
-        className="right-0 top-0 hidden lg:block"
-      />
+    <section className="">
       <div className="container-sm mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-[96px] items-center">
           {/* Contact Information Section */}
 
           <div className="w-full h-full order-1 shadow-[0px_4px_16px_1px_#00000014]">
-            <Icon
-              image="/image/Bolt.svg"
-              direction="left"
-              className="right-0 top-[50%]"
-            />
             <div className="w-full min-h-[400px] lg:h-full p-[41px] lg:p-[80px_50px_214px] bg-[#F8E8E8] rounded-[5px]">
               <div>
                 <div className="mb-[16px] text-center lg:text-start">

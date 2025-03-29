@@ -36,11 +36,11 @@ export default function ShowcaseBanner() {
       />
       <div className="container-sm mx-auto w-full">
         <div className="lg:bg-[#B81A14] rounded-[10px] lg:h-[184px] flex items-center justify-center">
-          <div className="lg:py-[37px] lg:px-[126px]">
-            <div className="grid grid-cols-2 w-full md:grid-cols-4 lg:grid-cols-4 gap-x-[16px] gap-y-[16px] lg:gap-x-[153px] place-items-center">
+          <div className="w-full h-full lg:py-[37px] lg:px-[126px]">
+            <div className="grid grid-cols-2 w-full md:grid-cols-4 lg:grid-cols-4 gap-x-[16px] gap-y-[16px] lg:gap-x-[103px] place-items-center">
               {BannerContents.map((p, i) => (
                 <div className="h-full w-full" key={i}>
-                  <div className="w-full h-full rounded-[10px]  bg-[#B81A14] py-[29px] px-[28px] lg:py-0 lg:px-0">
+                  <div className="w-full h-full rounded-[10px]  bg-[#B81A14] py-[29px] px-[28x] lg:py-0 lg:px-0">
                     <div className="w-full h-full text-center flex items-center justify-center flex-col">
                       <div className="w-[32px] h-[32px] flex items-center justify-center text-white text-2xl mb-[8px] lg:mb-[12px]">
                         {p.icon()}
