@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
 import Button from "../ui/Button";
-import Icon from "../ui/Icon";
 
 export default function ContactForm() {
   return (
