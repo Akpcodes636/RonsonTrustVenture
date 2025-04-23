@@ -1,232 +1,26 @@
 {
-    "caterpillarParts": [
+    "CraneParts": [
         {
             "id": 1,
-            "partNumber": "1U-3302",
-            "name": "Hydraulic Cylinder",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Hydraulic Components",
-            "description": "Heavy-duty hydraulic cylinder for Caterpillar excavators. Engineered with chrome-plated piston rods and high-quality seals for extended service life and reliability in demanding applications.",
-            "price": 1299.99,
-            "compatibility": ["320D", "320E", "323D", "323E", "324D", "324E"],
-            "specifications": {
-                "stroke": "16 inches",
-                "bore": "3.5 inches",
-                "maxPressure": "5000 psi",
-                "material": "High-strength alloy steel",
-                "weight": "45 lbs"
+            "Product Name": "Manitowoc 4100",
+            "image": "/image/crane2.svg",
+            "Key Specification":{
+              "GrossPower": "333 – 364 HP",
+              "NetHorsePower": "360 HP at 2,100 RPM. ​"
             },
-            "inStock": true,
-            "leadTime": "3-5 business days"
+            "description": "​The Manitowoc 4100W Series 2 crawler crane typically features a Cummins NTA-855-C360 diesel engine. It is a heavy-duty crawler crane built for high-capacity lifting and durability on demanding job sites. Known for its reliability and performance, it's a trusted choice for large-scale construction and industrial projects.",
+            "price": "N200,000"
         },
         {
             "id": 2,
-            "partNumber": "2S-4523",
-            "name": "Fuel Injection Pump",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Fuel System",
+            "Product Name": "Manitowoc 4200",
+            "image": "/image/crane2.svg",
+            "Key Specification":{
+              "GrossPower": "334 – 364 HP",
+              "Net horse power": "380 HP at 3,100 RPM. ​"
+            },
             "description": "Precision-engineered fuel injection pump for Caterpillar diesel engines. Delivers optimal fuel delivery for maximum power output and fuel efficiency while meeting emission standards.",
-            "price": 2499.99,
-            "compatibility": ["C7", "C9", "C13", "C15"],
-            "specifications": {
-                "flowRate": "200-750 cc/min",
-                "pressureRange": "1600-2200 bar",
-                "controlType": "Electronic",
-                "weight": "12.5 kg",
-                "dimensions": "30 x 20 x 25 cm"
-            },
-            "inStock": true,
-            "leadTime": "2-3 business days"
-        },
-        {
-            "id": 3,
-            "partNumber": "7X-1294",
-            "name": "Track Chain Assembly",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Undercarriage",
-            "description": "Heavy-duty track chain assembly for Caterpillar dozers and excavators. Features hardened steel links and bushings for maximum durability in abrasive conditions.",
-            "price": 4299.99,
-            "compatibility": ["D6", "D7", "D8"],
-            "specifications": {
-                "pitch": "215.9 mm",
-                "width": "600 mm",
-                "links": "39 per side",
-                "material": "Hardened alloy steel",
-                "shoesIncluded": true
-            },
-            "inStock": true,
-            "leadTime": "5-7 business days"
-        },
-        {
-            "id": 4,
-            "partNumber": "8E-6731",
-            "name": "Turbocharger",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Engine Components",
-            "description": "High-performance turbocharger for Caterpillar engines. Designed to provide optimal air compression for improved power output and fuel efficiency across a wide range of operating conditions.",
-            "price": 1899.99,
-            "compatibility": ["C15", "C18", "C27", "C32"],
-            "specifications": {
-              "compressorType": "Centrifugal",
-              "wastegateType": "Pneumatic",
-              "bearingType": "Journal bearing",
-              "maxBoostPressure": "35 psi",
-              "weight": "18 kg"
-            },
-            "inStock": true,
-            "leadTime": "3-4 business days"
-          },
-          {
-            "id": 5,
-            "partNumber": "9S-9082",
-            "name": "Final Drive Assembly",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Power Train",
-            "description": "Complete final drive assembly for Caterpillar tracked machines. Features precision-machined gears and robust housing for reliable power transfer to the tracks in demanding applications.",
-            "price": 5899.99,
-            "compatibility": ["D6T", "D7R", "D8T"],
-            "specifications": {
-              "gearRatio": "4.26:1",
-              "outputTorque": "95,000 Nm",
-              "oilCapacity": "18 liters",
-              "weight": "1250 kg",
-              "mounting": "6-bolt pattern"
-            },
-            "inStock": false,
-            "leadTime": "10-14 business days"
-          },
-          {
-            "id": 6,
-            "partNumber": "6I-4512",
-            "name": "Engine Control Module",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Electronics",
-            "description": "Advanced Engine Control Module (ECM) for Caterpillar equipment. Manages all aspects of engine performance including fuel delivery, timing, and emissions control for optimal efficiency.",
-            "price": 2799.99,
-            "compatibility": ["320D", "336E", "349E", "966K", "972M"],
-            "specifications": {
-              "processor": "32-bit automotive-grade",
-              "memoryCapacity": "4MB",
-              "inputChannels": "24",
-              "outputChannels": "16",
-              "operatingVoltage": "12-24V DC"
-            },
-            "inStock": true,
-            "leadTime": "1-2 business days"
-          },
-          {
-            "id": 7,
-            "partNumber": "3G-5879",
-            "name": "Water Pump",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Cooling System",
-            "description": "Heavy-duty water pump for Caterpillar engines. Features a durable cast iron housing and precision-balanced impeller for efficient coolant circulation and reliable engine temperature control.",
-            "price": 499.99,
-            "compatibility": ["C7", "C9", "C13", "C15", "3406", "3408"],
-            "specifications": {
-              "flowRate": "60 gallons per minute",
-              "inletSize": "2 inch",
-              "outletSize": "2 inch",
-              "impellerMaterial": "Bronze alloy",
-              "sealType": "Mechanical"
-            },
-            "inStock": true,
-            "leadTime": "2-3 business days"
-          },
-          {
-            "id": 8,
-            "partNumber": "5P-7623",
-            "name": "Bucket Teeth Set",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Ground Engaging Tools",
-            "description": "Set of heavy-duty bucket teeth for Caterpillar excavators and loaders. Manufactured from high-carbon steel with abrasion-resistant treatment for extended wear life in tough digging conditions.",
-            "price": 899.99,
-            "compatibility": ["320D", "336E", "349E", "966K", "972M"],
-            "specifications": {
-              "quantity": "5 pieces",
-              "material": "Heat-treated alloy steel",
-              "hardness": "48-52 HRC",
-              "retentionSystem": "Hammerless",
-              "weight": "42 kg (total set)"
-            },
-            "inStock": true,
-            "leadTime": "Same day shipping"
-          },
-          {
-            "id": 9,
-            "partNumber": "4T-6589",
-            "name": "Air Filter Assembly",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Filtration",
-            "description": "High-efficiency air filter assembly for Caterpillar equipment. Features multi-stage filtration with primary and secondary elements to protect engines from dust and debris in harsh environments.",
-            "price": 289.99,
-            "compatibility": ["D6T", "D7R", "D8T", "320D", "336E", "349E"],
-            "specifications": {
-              "filterMedia": "Synthetic",
-              "efficiency": "99.9% @ 2 microns",
-              "airFlow": "950 CFM",
-              "dustHoldingCapacity": "5 kg",
-              "serviceIndicator": "Included"
-            },
-            "inStock": true,
-            "leadTime": "Same day shipping"
-          },
-          {
-            "id": 10,
-            "partNumber": "2F-9023",
-            "name": "Starter Motor",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Electrical",
-            "description": "Heavy-duty starter motor for Caterpillar engines. Designed with high-torque output and thermal protection for reliable starting in extreme temperatures and demanding conditions.",
-            "price": 799.99,
-            "compatibility": ["C7", "C9", "C13", "C15", "3406", "3408"],
-            "specifications": {
-              "voltage": "24V",
-              "output": "7.5 kW",
-              "solenoidType": "Integrated",
-              "teeth": "11",
-              "rotation": "Clockwise"
-            },
-            "inStock": true,
-            "leadTime": "2-3 business days"
-          },
-          {
-            "id": 11,
-            "partNumber": "7N-8812",
-            "name": "Hydraulic Pump",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Hydraulic Components",
-            "description": "Variable displacement hydraulic pump for Caterpillar equipment. Provides precise flow control and pressure compensation for efficient operation of hydraulic systems under varying loads.",
-            "price": 3499.99,
-            "compatibility": ["320D", "336E", "349E", "966K", "972M"],
-            "specifications": {
-              "displacement": "130 cc/rev",
-              "maxPressure": "350 bar",
-              "maxFlow": "260 l/min",
-              "controlType": "Electronic load sensing",
-              "mountingFlange": "SAE B"
-            },
-            "inStock": true,
-            "leadTime": "3-5 business days"
-          },
-          {
-            "id": 12,
-            "partNumber": "6Y-2497",
-            "name": "Alternator",
-            "image": "/image/caterpillar4.jpg",
-            "category": "Electrical",
-            "description": "Heavy-duty alternator for Caterpillar equipment. Features sealed bearings and high-output design to maintain reliable electrical power in dusty and vibration-intensive environments.",
-            "price": 649.99,
-            "compatibility": ["D6T", "D7R", "D8T", "320D", "336E", "349E"],
-            "specifications": {
-              "voltage": "24V",
-              "output": "95 amps",
-              "pulleyType": "Serpentine",
-              "mountingType": "Pad mount",
-              "regulator": "Internal"
-            },
-            "inStock": true,
-            "leadTime": "2-3 business days"
-          }
+            "price":  "N400,000"
+        }
     ]
 }

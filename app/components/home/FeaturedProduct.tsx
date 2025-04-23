@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ProductCard from "../ui/ProductCard";
 import Icon from "../ui/Icon";
+import products from "../../data/caterpillar.json"; // Import your JSON data
 
 export default function FeaturedProducts() {
   useEffect(() => {
@@ -12,6 +13,9 @@ export default function FeaturedProducts() {
       once: true, // Animation happens once
     });
   }, []);
+
+  // Get only the first 2 products to feature
+  const featuredProducts = products.CraneParts.slice(0, 2);
 
   return (
     <section className="pt-[120px] pb-[20px] lg:pt-[180px] lg:pb-[50px] bg-white relative">
@@ -28,7 +32,6 @@ export default function FeaturedProducts() {
         className="left-0 top-[58%]"
         data-aos="fade-right"
       />
-
       <div className="container-sm mx-auto">
         {/* Title with fade-in animation */}
         <h2
@@ -37,25 +40,29 @@ export default function FeaturedProducts() {
         >
           Explore Our Premium Manitowoc Parts
         </h2>
-
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-y-[56px] gap-x-[30px]"
           data-aos="fade-up"
         >
-          <ProductCard
-            title="Mawitoma 4200"
-            price="500,000"
-            image="/image/image.svg"
-            text="Gross Power: 333 – 364 HP"
-            data-aos="zoom-in"
-          />
-          <ProductCard
-            title="Mawitoma 4200"
-            price="500,000"
-            image="/image/image.svg"
-            text="Gross Power: 333 – 364 HP"
-            data-aos="zoom-in"
-          />
+          {featuredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              title={product["Product Name"]}
+              price={product.price}
+              image={product.image}
+              text={
+                Array.isArray(product["Key Specification"])
+                  ? product["Key Specification"].find((item) => 
+                      item.toLowerCase().includes("gross")
+                    ) || "Gross Power: N/A"
+                  : typeof product["Key Specification"] === "object" 
+                    ? `Gross Power: ${product["Key Specification"]?.GrossPower || "N/A"}` 
+                    : "Gross Power: N/A"
+              }
+              data-aos="zoom-in"
+            />
+          ))}
         </div>
       </div>
     </section>

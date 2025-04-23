@@ -18,7 +18,7 @@ export default function OurValues() {
             <div className="bg-red-500 h-full w-full">
               <div className="h-[144px] lg:h-[536px] mx-auto rounded-[5px]">
                 <Image
-                  src="/image/tractor2.png"
+                  src="/image/crane.svg"
                   width={500}
                   height={500}
                   alt="tractor"

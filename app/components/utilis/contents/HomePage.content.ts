@@ -8,15 +8,15 @@ export const NavLinks = [
   },
   {
     title: "Product",
-    router: "/Product",
+    router: "/products",
   },
   {
     title: "About Us",
-    router: "/About",
+    router: "/about",
   },
   {
     title: "Contact",
-    router: "/Contact",
+    router: "/contact",
   },
 ];
 
@@ -110,5 +110,78 @@ export const OurValues = [
   },
 ];
 
+export const stepsContent = [
+  {
+    image: "/image/Vector2.svg",
+    text: "Delivery Information",
+  },
+  {
+    image: "/image/Vector2.svg",
+    text: "Payment Details",
+  },
+  {
+    image: "/image/Vector2.svg",
+    text: "Confirm Order",
+  }
+];
+
+export const stateOptions = [
+  { value: "abia", label: "Abia" },
+  { value: "adamawa", label: "Adamawa" },
+  { value: "akwa_ibom", label: "Akwa Ibom" },
+  { value: "anambra", label: "Anambra" },
+  { value: "bauchi", label: "Bauchi" },
+  { value: "bayelsa", label: "Bayelsa" },
+  { value: "benue", label: "Benue" },
+  { value: "borno", label: "Borno" },
+  { value: "cross_river", label: "Cross River" },
+  { value: "delta", label: "Delta" },
+  { value: "ebonyi", label: "Ebonyi" },
+  { value: "edo", label: "Edo" },
+  { value: "ekiti", label: "Ekiti" },
+  { value: "enugu", label: "Enugu" },
+  { value: "gombe", label: "Gombe" },
+  { value: "imo", label: "Imo" },
+  { value: "jigawa", label: "Jigawa" },
+  { value: "kaduna", label: "Kaduna" },
+  { value: "kano", label: "Kano" },
+  { value: "katsina", label: "Katsina" },
+  { value: "kebbi", label: "Kebbi" },
+  { value: "kogi", label: "Kogi" },
+  { value: "kwara", label: "Kwara" },
+  { value: "lagos", label: "Lagos" },
+  { value: "nasarawa", label: "Nasarawa" },
+  { value: "niger", label: "Niger" },
+  { value: "ogun", label: "Ogun" },
+  { value: "ondo", label: "Ondo" },
+  { value: "osun", label: "Osun" },
+  { value: "oyo", label: "Oyo" },
+  { value: "plateau", label: "Plateau" },
+  { value: "rivers", label: "Rivers" },
+  { value: "sokoto", label: "Sokoto" },
+  { value: "taraba", label: "Taraba" },
+  { value: "yobe", label: "Yobe" },
+  { value: "zamfara", label: "Zamfara" },
+  { value: "fct", label: "FCT - Abuja" },
+];
+
+
+export const cityOptionsMap: { [key: string]: { value: string; label: string }[] } = {
+  lagos: [
+    { value: "ikeja", label: "Ikeja" },
+    { value: "lekki", label: "Lekki" },
+    { value: "yaba", label: "Yaba" },
+  ],
+  abuja: [
+    { value: "gwarinpa", label: "Gwarinpa" },
+    { value: "maitama", label: "Maitama" },
+    { value: "asokoro", label: "Asokoro" },
+  ],
+  kaduna: [
+    { value: "barnawa", label: "Barnawa" },
+    { value: "kawo", label: "Kawo" },
+    { value: "ungwanrimi", label: "Ungwan Rimi" },
+  ],
+};
 
 

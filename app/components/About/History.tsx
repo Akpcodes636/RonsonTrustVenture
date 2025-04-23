@@ -16,9 +16,9 @@ export default function History() {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[30px] gap-y-[24px]">
           <div className="w-full h-full">
-            <div className="relative mx-auto rounded-[5px] overflow-hidden h-[160px]  lg:h-[304px] ">
+            <div className="relative mx-auto rounded-[5px] overflow-hidden h-[160px] lg:h-full ">
               <Image
-                src="/image/History-image.png"
+                src="/image/image-2.svg"
                 alt="history image"
                 fill
                 className="object-cover w-full h-full"

@@ -17,8 +17,8 @@ export default function Contact() {
           direction="left"
           className="right-0 top-[65%] block lg:hidden"
         />
-        {/* Contact Form Section with proper spacing */}
-        <div className="-mt-52 xl:-mt-40 px-4 py-16 relative">
+        {/* Contact Form Section with proper spacing */} 
+        <div className="-mt-96 xl:-mt-40 px-4 py-16 relative">
         <Icon
           image="/image/Vector-1.svg"
           direction="left"

@@ -33,7 +33,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[29px] gap-y-[32px]">
           <div className="w-full h-full" data-aos="fade-right">
             <Image
-              src="/image/tractors.png"
+              src="/image/Frame.svg"
               width={500}
               height={500}
               alt="tractor image"

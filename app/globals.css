@@ -39,21 +39,24 @@ body {
 }
 
 .hero-bg {
-  background-image: url("/image/HeroImage.png");
+  background-image: url("/image/crane.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .mobile-bg {
- background-image: url("/image/BGImage.svg");
- background-size: cover;
- background-repeat: no-repeat;
- background-position: center;
-}
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("/image/crane.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: darken;
+  }
+  
 
 .desktop-bg {
-  background-image: url("/image/Rectangle.svg");
+  background-image: url("/image/crane.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -71,4 +74,10 @@ body {
   font-weight: 400;
 }
 
+.select-class {
+  @apply h-12 w-full appearance-none rounded-lg border-[#000000] bg-[#0000000F] px-4 py-3 text-[#000000E5] hover:border focus:border-[3px] focus:bg-white focus:outline-none;
+}
 
+.input-class {
+  @apply h-12 w-full rounded-lg  bg-[#EBEBEB] px-4 py-3 text-[#000000E5] hover:border focus:border-[3px] focus:bg-white focus:outline-none;
+}

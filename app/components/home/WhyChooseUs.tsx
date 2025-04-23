@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
               data-aos="fade-right"
             >
               <Image
-                src="/image/About.png"
+                src="/image/Group4.svg"
                 width={500}
                 height={500}
                 alt="about image"

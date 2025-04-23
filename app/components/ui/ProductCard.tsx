@@ -2,20 +2,24 @@
 import Image from "next/image";
 import Button from "../ui/Button"; // Ensure the path is correct
 import { useRouter } from "next/navigation";
+import products from "../../data/caterpillar.json"; // Adjust the path as needed
 
 interface ProductProps {
+  id:number;
   title: string;
   text: string;
   price: string;
   image: string;
+  // keySpecification?: string[];
+  // description?: string;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, text, image, price }) => {
+const ProductCard: React.FC<ProductProps> = ({ id,title, text, image, price }) => {
   const router = useRouter();
 
   const goToProductPage = () => {
     // Navigate to the product detail page using the product's ID
-    router.push("/product");
+    router.push(`/products/${id}`);
   };
 
   return (
