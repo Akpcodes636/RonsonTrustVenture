@@ -5,13 +5,20 @@ import { NavLinks } from "./utilis/contents/HomePage.content";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useRouter } from "next/navigation";
+// import { Router } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const goToProductPage = () => {
+    router.push("/products");
+  }
 
   return (
     <>
@@ -41,6 +48,7 @@ const Header = () => {
                 type="button"
                 style="primary"
                 css="w-[182px] h-[48px] bg-[#B81A14] rounded-[5px]"
+                fn={goToProductPage}
               >
                 Order Now
               </Button>
@@ -87,6 +95,7 @@ const Header = () => {
                 type="button"
                 style="primary"
                 css="w-[182px] h-[48px] bg-[#B81A14] rounded-[5px]"
+                fn={goToProductPage}
               >
                 Order Now
               </Button>

@@ -13,6 +13,7 @@
     "formik": "^2.4.6",
     "heroicons": "^2.2.0",
     "lucide-react": "^0.475.0",
+    "mongodb": "^6.16.0",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/aos": "^3.0.7",
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

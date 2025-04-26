@@ -1,15 +1,13 @@
 "use client";
 import Image from "next/image";
 import InputField from "../ui/InputField";
-import SelectField from "../ui/SelectField";
 import Button from "../ui/Button";
 import { useFormik } from "formik";
-import {
-  stateOptions,
-  cityOptionsMap,
-} from "../utilis/contents/HomePage.content";
+import { useStep } from "@/app/zustand/store";
 
 export default function Form() {
+  const { step, setStep } = useStep();
+
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -20,8 +18,31 @@ export default function Form() {
       state: "",
       city: "",
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      // Log form values to check
       console.log("Form values:", values);
+
+      try {
+        const response = await fetch("/api/order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),  // Send form values as JSON
+        });
+
+        const result = await response.json();
+        
+        if (response.ok) {
+          console.log("Order saved successfully:", result.message);
+          // Move to the next step after successful order submission
+          setStep(step + 1);
+        } else {
+          console.error("Error:", result.error);
+        }
+      } catch (error) {
+        console.error("Error submitting order:", error);
+      }
     },
     validate: (values) => {
       const errors: Partial<typeof values> = {};
@@ -33,8 +54,6 @@ export default function Form() {
       return errors;
     },
   });
-
-  const currentCityOptions = cityOptionsMap[formik.values.state] || [];
 
   return (
     <div className="container-sm mx-auto pt-[120px] pb-[200px]">
@@ -48,14 +67,12 @@ export default function Form() {
             className="object-contain w-[32px] h-[32px] text-center"
           />
         </span>
-        <h1 className="font-semibold text-[24px] text-[#4A4A4A]">
-          Delivery Address
-        </h1>
+        <h1 className="font-semibold text-[24px] text-[#4A4A4A]">Delivery Address</h1>
       </div>
 
       <form onSubmit={formik.handleSubmit}>
-        <div className="mx-auto max-w-[711px] h-auto bg-[#F4F4F4] rounded-[5px]">
-          <div className="p-[52px] flex flex-col gap-4">
+        <div className="mx-auto min-w-[358px] lg:min-w-[711px] h-auto bg-[#F4F4F4] rounded-[5px]">
+          <div className="py-[32px] px-[18px] lg:p-[52px] flex flex-col gap-4">
             <InputField
               name="fullName"
               label="Name"
@@ -93,7 +110,7 @@ export default function Form() {
                   onBlur={formik.handleBlur}
                 />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 hidden lg:block">
                 <InputField
                   name="alternativePhoneNumber"
                   label="Alternative Phone Number"
@@ -106,28 +123,21 @@ export default function Form() {
 
             <div className="flex gap-[30px]">
               <div className="flex-1">
-                <SelectField
+                <InputField
                   name="state"
                   label="State"
-                  options={stateOptions}
                   value={formik.values.state}
-                  onChange={(e) => {
-                    formik.handleChange(e);
-                    formik.setFieldValue("city", "");
-                  }}
+                  onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={formik.touched.state ? formik.errors.state : null}
                 />
               </div>
               <div className="flex-1">
-                <SelectField
+                <InputField
                   name="city"
                   label="City"
-                  options={currentCityOptions}
                   value={formik.values.city}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={formik.touched.city ? formik.errors.city : null}
                 />
               </div>
             </div>
@@ -137,6 +147,7 @@ export default function Form() {
                 style="primary"
                 type="submit"
                 css="w-[182px] h-[48px] rounded-[5px]"
+                fn={()=> setStep(step + 1)}
               >
                 Proceed to Payment
               </Button>

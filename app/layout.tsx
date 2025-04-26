@@ -1,5 +1,6 @@
 import { Inter, Open_Sans } from "next/font/google";
 import "./globals.css";
+import { Metadata } from "next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -12,6 +13,14 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "600"],
 });
+
+export const metadata: Metadata = {
+  title: {
+    default: "Ronson Trust Ventures",
+    template: "%s | Ronson Trust Ventures"
+  },
+  description: "Buy Genuine Manitowoc Spare Parts from a trusted, reliable dealer. Fast shipping, guaranteed authenticity, and expert support for all your Manitowoc equipment needs.",
+}
 
 export default function RootLayout({
   children,

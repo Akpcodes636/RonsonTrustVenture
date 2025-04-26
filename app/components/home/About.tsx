@@ -15,7 +15,7 @@ export default function About() {
 
   const goToAboutPage = () => {
     // Navigate to the product detail page using the product's ID
-    router.push("/About");
+    router.push("/about");
   };
 
   return (

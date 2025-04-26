@@ -4,6 +4,11 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Icon from "../components/ui/Icon";
 
+
+export const metadata = {
+  title: "Contact Us | Ronson Trust Ventures",
+}
+
 export default function Contact() {
   return (
     <div>

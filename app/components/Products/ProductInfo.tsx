@@ -32,7 +32,7 @@ export default function ProductInfo() {
           {BannerContents.map((p, i) => {
             return (
               <div className="w-full h-full flex justify-center" key={i}>
-                <div className="bg-[#F8E8E8] w-[358px] lg:w-[393px]  h-[176px] mx-auto  lg:h-[200px] flex items-center justify-center rounded-[5px]">
+                <div className="bg-[#F8E8E8] w-full max-w-[358px] lg:max-w-[393px]  h-[176px] mx-auto lg:h-[200px] flex items-center justify-center rounded-[5px]">
                   <div className="py-[32px] px-[16px] flex items-center justify-center flex-col">
                     <div className="w-[48px] h-[48px] bg-[#B81A14] mb-[16px] lg:mb-[24px] rounded-full flex items-center justify-center">
                       <div className="text-white w-[24px] h-[24px] flex items-center justify-center">
