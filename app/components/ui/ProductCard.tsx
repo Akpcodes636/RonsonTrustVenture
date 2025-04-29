@@ -10,8 +10,6 @@ interface ProductProps {
   text: string;
   price: string;
   image: string;
-  // keySpecification?: string[];
-  // description?: string;
 }
 
 const ProductCard: React.FC<ProductProps> = ({ id,title, text, image, price }) => {
@@ -24,7 +22,7 @@ const ProductCard: React.FC<ProductProps> = ({ id,title, text, image, price }) =
 
   return (
     <div className="shadow-[0_4px_8px_0_rgba(0,0,0,0.08)] min-h-[369px] md:min-h-[550px] lg:min-h-[456px]">
-      <div className="rounded-[5px] mx-auto overflow-hidden">
+      <div className="rounded-[5px] mx-auto overflow-hidden max-h-[144px] md:max-h-[200px] lg:max-h-[200px]">
         <Image
           src={image}
           width={500}

@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { FaTruck } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { BsBoxFill } from "react-icons/bs";

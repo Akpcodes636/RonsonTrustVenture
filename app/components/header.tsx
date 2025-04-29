@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Logo from "./ui/Logo";
-import { NavLinks } from "./utilis/contents/HomePage.content";
+import { NavLinks } from "./utils/contents/HomePage.content";
 import Link from "next/link";
 import Button from "./ui/Button";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 // import { Router } from "next/navigation";
 
 const Header = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,7 +18,7 @@ const Header = () => {
 
   const goToProductPage = () => {
     router.push("/products");
-  }
+  };
 
   return (
     <>

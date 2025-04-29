@@ -23,25 +23,39 @@ export default function Form() {
       console.log("Form values:", values);
 
       try {
-        const response = await fetch("/api/order", {
+        const response = await fetch("/api/submit-order", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(values),  // Send form values as JSON
+          body: JSON.stringify(values),
         });
 
-        const result = await response.json();
-        
+        let result;
+
+        try {
+          result = await response.json();
+        } catch (jsonError) {
+          console.error("Could not parse JSON response:", jsonError);
+          throw new Error("Invalid server response");
+        }
+
         if (response.ok) {
           console.log("Order saved successfully:", result.message);
-          // Move to the next step after successful order submission
           setStep(step + 1);
         } else {
-          console.error("Error:", result.error);
+          console.error(
+            "Server responded with an error:",
+            result.error || "Unknown error"
+          );
         }
       } catch (error) {
-        console.error("Error submitting order:", error);
+        if (error instanceof Error) {
+          console.log(error);
+          console.error("Error submitting order:", error.message);
+        } else {
+          console.error("Error submitting order:", error);
+        }
       }
     },
     validate: (values) => {
@@ -67,7 +81,9 @@ export default function Form() {
             className="object-contain w-[32px] h-[32px] text-center"
           />
         </span>
-        <h1 className="font-semibold text-[24px] text-[#4A4A4A]">Delivery Address</h1>
+        <h1 className="font-semibold text-[24px] text-[#4A4A4A]">
+          Delivery Address
+        </h1>
       </div>
 
       <form onSubmit={formik.handleSubmit}>
@@ -113,7 +129,7 @@ export default function Form() {
               <div className="flex-1 hidden lg:block">
                 <InputField
                   name="alternativePhoneNumber"
-                  label="Alternative Phone Number"
+                  label="AlternativePhoneNumber"
                   value={formik.values.alternativePhoneNumber}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -147,7 +163,7 @@ export default function Form() {
                 style="primary"
                 type="submit"
                 css="w-[182px] h-[48px] rounded-[5px]"
-                fn={()=> setStep(step + 1)}
+                fn={() => setStep(step + 1)}
               >
                 Proceed to Payment
               </Button>

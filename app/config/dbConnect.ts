@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 
 const connection: { isConnected?: number } = {};
@@ -15,7 +14,7 @@ async function dbConnect() {
 
   try {
     const db = await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "FlextableDB",
+      dbName: "dbManitowocOrders",
       // Add these connection options for improved stability
       serverSelectionTimeoutMS: 5000,
       retryWrites: true,

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { OurValues as ValuesData } from "../../components/utilis/contents/HomePage.content";
+import { OurValues as ValuesData } from "../utils/contents/HomePage.content";
 import Icon from "../ui/Icon";
 
 export default function OurValues() {

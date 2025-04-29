@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { About } from "../utilis/contents/HomePage.content";
+import { About } from "../utils/contents/HomePage.content";
 import Icon from "../ui/Icon";
 
 export default function WhyChooseUs() {
@@ -52,7 +52,11 @@ export default function WhyChooseUs() {
           </div>
           <div className="w-full h-full">
             {About.map((p, i) => (
-              <div key={i} className="mb-[48px] lg:mb-[56px]" data-aos="fade-up">
+              <div
+                key={i}
+                className="mb-[48px] lg:mb-[56px]"
+                data-aos="fade-up"
+              >
                 <div className="w-[54px] h-[54px] bg-[#FAE6E5] rounded-[3.37px] flex items-center justify-center mb-[16px]">
                   <div className="w-[32px] h-[20px]">
                     <Image
