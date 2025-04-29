@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
 interface InputProps {
   name: string;
@@ -24,7 +24,7 @@ const InputField: React.FC<InputProps> = ({
   name,
   readonly,
   label,
-  type = "text",
+  // type = "text",
   value,
   onChange,
   onBlur,
@@ -33,11 +33,11 @@ const InputField: React.FC<InputProps> = ({
   max,
   autoComplete, // Destructuring autoComplete prop
 }) => {
-  const [view, setView] = useState(false);
+  // const [view, setView] = useState(false);
 
-  const handleView = () => {
-    setView(!view);
-  };
+  // const handleView = () => {
+  //   setView(!view);
+  // };
 
   //   console.log(error)
 
@@ -53,7 +53,7 @@ const InputField: React.FC<InputProps> = ({
           readOnly={readonly}
           id={name}
           name={name}
-          type={view && type === "password" ? "text" : type}
+          // type={view && type === "password" ? "text" : type}
           placeholder={placeholder}
           value={value}
           onChange={onChange}

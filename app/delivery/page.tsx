@@ -8,10 +8,6 @@ import ProductHero from "../components/Products/ProductHero";
 import BookingProgress from "../components/ui/ProgressBar";
 import { useStep } from "../zustand/store";
 
- const metadata = {
-  title: "Delivery | Ronson Trust Ventures",
-  description: "Delivery page for Ronson Trust Ventures",
-}
 
 export default function Page() {
   const { step } = useStep();

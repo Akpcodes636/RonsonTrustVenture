@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Button from "../ui/Button"; // Ensure the path is correct
 import { useRouter } from "next/navigation";
-import products from "../../data/caterpillar.json"; // Adjust the path as needed
+// import products from "../../data/caterpillar.json"; // Adjust the path as needed
 
 interface ProductProps {
   id:number;

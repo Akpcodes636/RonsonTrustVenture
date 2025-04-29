@@ -124,7 +124,7 @@ export default function ProductDetailsPage() {
                 <p className="mb-6 md:mb-[40px] font-normal text-base md:text-[18px] leading-[150%]">
                   It is a heavy-duty crawler crane built for high-capacity
                   lifting and durability on demanding job sites. Known for its
-                  reliability and performance, it's a trusted choice for
+                  reliability and performance, it&apos;s a trusted choice for
                   large-scale construction and industrial projects.
                 </p>
               </div>
