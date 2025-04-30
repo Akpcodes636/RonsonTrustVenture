@@ -60,7 +60,7 @@ export const AboutContent = [
 export const PartContent = [
   {
     title: "20 +",
-    text: "Years Experience",
+    text: "Years Experiences",
     icon: "Clock",
   },
   {
