@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 import { useStep } from "@/app/zustand/store";
 
 export default function ConfirmOrder() {
-   const { step, setStep } = useStep();
+  const { step, setStep } = useStep();
   return (
     <div className="pt-16 md:pt-24 lg:pt-[120px] pb-20 md:pb-32 lg:pb-[200px] px-4 md:px-6">
       <div className="flex items-center gap-3 md:gap-[18px] justify-center mb-6 md:mb-8 lg:mb-[32px]">
@@ -63,14 +63,14 @@ export default function ConfirmOrder() {
             <p className="font-normal text-sm md:text-base lg:text-[16px] leading-tight text-[#4A4A4A] mb-3 md:mb-4 lg:mb-[14px]">
               +234 00 00000 000
             </p>
-            <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-4">
-              <div className="max-w-full sm:max-w-[250px] md:max-w-[300px] lg:max-w-[401px]">
+            <div className="flex flex-row justify-between gap-2 sm:gap-4">
+              <div className="max-w-full flex-1 sm:max-w-[250px] md:max-w-[300px] lg:max-w-[401px]">
                 <p className="font-normal text-sm md:text-base lg:text-[16px] text-[#4A4A4A]">
                   The Mansion, Mosheshe Estate, Airport Road, Effurun, Warri,
                   Delta. Nigeria
                 </p>
               </div>
-              <div className="text-right sm:text-left">
+              <div className="text-right flex-none">
                 <p className="text-[#B81A14] font-medium text-sm md:text-base lg:text-[18px] leading-tight">
                   Edit
                 </p>

@@ -9,7 +9,7 @@ import WhyChooseUs from "./components/home/WhyChooseUs";
 
 export default function Home() {
   return (
-    <div className="hide-scroll">
+    <div className="hide-scroll bigg">
       <Hero />
       <FeaturedProducts />
       <WhyChooseUs />

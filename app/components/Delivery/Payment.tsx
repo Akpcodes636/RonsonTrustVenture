@@ -22,7 +22,7 @@ export default function Payment() {
           Payment Details
         </h1>
       </div>
-      <div className="mx-auto max-w-[450px]  lg:max-w-[711px] h-[536px] bg-[#F4F4F4] rounded-[5px]">
+      <div className="mx-auto max-w-[358px]  lg:min-w-[711px] h-[536px] bg-[#F4F4F4] rounded-[5px]">
         <div className="p-[52px]">
           <h1>Hello World!!!!</h1>
           <Button

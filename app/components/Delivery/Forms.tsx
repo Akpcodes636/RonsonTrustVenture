@@ -87,7 +87,7 @@ export default function Form() {
       </div>
 
       <form onSubmit={formik.handleSubmit}>
-        <div className="mx-auto min-w-[358px] lg:min-w-[711px] h-auto bg-[#F4F4F4] rounded-[5px]">
+        <div className="mx-auto max-w-[358px] lg:min-w-[711px] h-auto bg-[#F4F4F4] rounded-[5px]">
           <div className="py-[32px] px-[18px] lg:p-[52px] flex flex-col gap-4">
             <InputField
               name="fullName"
