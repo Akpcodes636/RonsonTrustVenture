@@ -47,7 +47,7 @@ const Header = () => {
               <Button
                 type="button"
                 style="primary"
-                css="w-[182px] h-[48px] bg-[#B81A14] rounded-[5px]"
+                css="w-[182px] h-[48px] bg-[#B81A14]"
                 fn={goToProductPage}
               >
                 Order Now

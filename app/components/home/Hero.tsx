@@ -52,7 +52,7 @@ export default function Hero() {
               style="primary"
               fn={handleProduct}
               type="button"
-              css="bg-[#B81A14] w-[182px] h-[48px] rounded-[5px] text-white body-text"
+              css="bg-[#B81A14] w-[182px] h-[48px] text-white body-text"
             >
               Order Now
             </Button>
