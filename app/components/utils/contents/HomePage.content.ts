@@ -1,6 +1,4 @@
 
-
-
 export const NavLinks = [
   {
     title: "Home",
@@ -12,11 +10,11 @@ export const NavLinks = [
   },
   {
     title: "About Us",
-    router: "/about",
+    router: "/About",
   },
   {
     title: "Contact",
-    router: "/contact",
+    router: "/Contact",
   },
 ];
 
