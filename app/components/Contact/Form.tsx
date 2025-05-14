@@ -12,7 +12,7 @@ export default function ContactForm() {
           {/* Contact Information Section */}
 
           <div className="w-full h-full order-1 shadow-[0px_4px_16px_1px_#00000014]">
-            <div className="w-full min-h-[400px] lg:h-full p-[41px] lg:p-[80px_50px_214px] bg-[#F8E8E8] rounded-[5px]">
+            <div className="w-full min-h-[400px] lg:h-full p-[31px] lg:p-[80px_50px_214px] bg-[#F8E8E8] rounded-[5px]">
               <div>
                 <div className="mb-[16px] text-center lg:text-start">
                   <h2 className="heading text-[24px] lg:text-[26px] leading-[130%] mb-[8px] text-[#B81A14]">
@@ -64,7 +64,7 @@ export default function ContactForm() {
                         Email Us
                       </h2>
                       <p className="font-normal text-[14px] lg:text-[16px] leading-[150%] text-[#727272]">
-                        ralphronsontvnigeria@gmail.com
+                      ralphronsontvnigeria@gmail.com
                       </p>
                     </div>
                   </Link>
