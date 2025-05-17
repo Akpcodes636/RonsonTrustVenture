@@ -25,9 +25,10 @@ export default async function ProductCatalogue() {
                 key={product._id}
                 id={Number(product._id)}
                 title={product.name}
-                price={product.price}
+                price={product.price.toString()}
                 image={imageUrl} // Use the resolved image URL
                 text={product.text || ""}
+                slug={product.slug.current} 
               />
             );
           })}

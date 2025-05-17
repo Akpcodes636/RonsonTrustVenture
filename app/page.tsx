@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Footer from "./components/footer";
 import About from "./components/home/About";
 

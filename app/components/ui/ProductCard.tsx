@@ -10,14 +10,17 @@ interface ProductProps {
   text: string;
   price: string;
   image: string;
+  description?: string;
+  slug: string;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ id,title, text, image, price }) => {
+const ProductCard: React.FC<ProductProps> = ({ id,title, text, image, price,slug }) => {
+  console.log(slug);
   const router = useRouter();
 
   const goToProductPage = () => {
     // Navigate to the product detail page using the product's ID
-    router.push(`/products/${id}`);
+    router.push(`/products/${slug}`);
   };
 
   return (
