@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 // import products from "../../data/caterpillar.json"; // Adjust the path as needed
 
 interface ProductProps {
-  id:number;
   title: string;
   text: string;
   price: string;
@@ -14,7 +13,7 @@ interface ProductProps {
   slug: string;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ id,title, text, image, price,slug }) => {
+const ProductCard: React.FC<ProductProps> = ({ title, text, image, price,slug }) => {
   console.log(slug);
   const router = useRouter();
 
