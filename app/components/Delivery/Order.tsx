@@ -2,9 +2,24 @@
 import Image from "next/image";
 import Button from "../ui/Button";
 import { useStep } from "@/app/zustand/store";
+import useSanityProduct from "@/app/hooks/useSanityOrder";
+import useMongoProducts from '@/app/hooks/useMongoProducts';
+import { useRouter } from "next/router";
 
-export default function ConfirmOrder() {
-  const { step, setStep } = useStep();
+interface ConfirmOrderProps {
+  setStep: (step: number) => void;
+}
+
+export default function ConfirmOrder({ setStep }: ConfirmOrderProps) {
+const { products,error } = useMongoProducts();
+
+const router = useRouter();
+const { slug } = router.query;
+
+const { product, loading } = useSanityProduct(slug as string);
+  // console.log("Sanity Order:", order);
+
+  // const { step, setStep } = useStep();
   return (
     <div className="pt-16 md:pt-24 lg:pt-[120px] pb-20 md:pb-32 lg:pb-[200px] px-4 md:px-6">
       <div className="flex items-center gap-3 md:gap-[18px] justify-center mb-6 md:mb-8 lg:mb-[32px]">
@@ -32,12 +47,12 @@ export default function ConfirmOrder() {
               </h2>
             </div>
             <p className="font-normal text-sm md:text-base lg:text-[16px] leading-tight text-[#4A4A4A] mb-3 md:mb-4 lg:mb-[14px]">
-              Manitowoc 4100
+              {product?.name}
             </p>
             <div className="flex justify-between items-center">
               <div>
                 <p className="font-normal text-sm md:text-base lg:text-[16px] text-[#4A4A4A]">
-                  Qty.1 N2000
+                  Qty.1 <span>${product?.price}</span>
                 </p>
               </div>
               <div>
@@ -111,7 +126,7 @@ export default function ConfirmOrder() {
             style="primary"
             type="submit"
             css="w-[182px] h-[48px] rounded-[5px]"
-            fn={() => setStep(step + 1)}
+            fn={() => setStep(4) }
           >
             Confirm Order
           </Button>

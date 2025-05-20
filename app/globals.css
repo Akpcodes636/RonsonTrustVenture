@@ -80,5 +80,5 @@ body {
 }
 
 .input-class {
-  @apply h-12 w-full rounded-lg  bg-[#EBEBEB] px-4 py-3 text-[#000000E5] hover:border focus:border-[3px] focus:bg-white focus:outline-none;
+  @apply h-12 w-full rounded-lg bg-[#EBEBEB] px-4 py-3 text-[#000000E5] hover:border focus:border-[3px] focus:bg-white focus:outline-none;
 }

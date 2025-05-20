@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   const goToProductPage = () => {
-    router.push("/products");
+    router.push("/delivery");
   };
 
   return (

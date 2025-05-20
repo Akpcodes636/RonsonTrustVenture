@@ -3,8 +3,8 @@ import { useStep } from "@/app/zustand/store";
 import Image from "next/image";
 import Button from "../ui/Button";
 
-export default function Payment() {
-  const { step, setStep } = useStep();
+export default function Payment({ setStep }: { setStep: (step: number) => void }) {
+  // const { step, setStep } = useStep();
 
   return (
     <div className="pt-[120px] pb-[200px]">
@@ -29,7 +29,7 @@ export default function Payment() {
             style="primary"
             css="w-[182px] h-[48px] rounded-[5px]"
             type="button"
-            fn={()=> setStep(step + 1)}
+            fn={()=> setStep(3)}
           >
             Make Payment
           </Button>

@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     template: "%s | Ronson Trust Ventures"
   },
   description: "Buy Genuine Manitowoc Spare Parts from a trusted, reliable dealer. Fast shipping, guaranteed authenticity, and expert support for all your Manitowoc equipment needs.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
+   manifest: "/site.webmanifest",
 }
 
 export default function RootLayout({

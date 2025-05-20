@@ -1,4 +1,5 @@
 import React from "react";
+import Loader from "./Loader";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -39,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
         ${css}
       `}
     >
-      {children}
+    {loading ? <Loader /> : children}
     </button>
   );
 };

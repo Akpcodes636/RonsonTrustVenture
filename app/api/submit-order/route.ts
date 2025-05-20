@@ -3,7 +3,6 @@ import Order from "../../lib/schema/manitowocOrder";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  
   try {
     await dbConnect();
     const data = await req.json();

@@ -23,7 +23,6 @@ export default async function ProductCatalogue() {
             return (
               <ProductCard
                 key={product._id}
-                id={Number(product._id)}
                 title={product.name}
                 price={product.price.toString()}
                 image={imageUrl} // Use the resolved image URL

@@ -2,72 +2,66 @@
 import Image from "next/image";
 import InputField from "../ui/InputField";
 import Button from "../ui/Button";
-import { useFormik } from "formik";
 import { useStep } from "@/app/zustand/store";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 
-export default function Form() {
-  const { step, setStep } = useStep();
+// 1. Create Zod schema
+const OrderSchema = z.object({
+  fullName: z.string().min(2, "Full name is required"),
+  email: z.string().email("Invalid email address"),
+  address: z.string().min(5, "Address is required"),
+  phoneNumber: z.string().min(10, "Phone number is required"),
+  alternativePhoneNumber: z.string().optional(),
+  state: z.string().min(2, "State is required"),
+  city: z.string().min(2, "City is required"),
+});
 
-  const formik = useFormik({
-    initialValues: {
-      fullName: "",
-      email: "",
-      address: "",
-      phoneNumber: "",
-      alternativePhoneNumber: "",
-      state: "",
-      city: "",
-    },
-    onSubmit: async (values) => {
-      // Log form values to check
-      console.log("Form values:", values);
+type OrderForm = z.infer<typeof OrderSchema>;
 
-      try {
-        const response = await fetch("/api/submit-order", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
-        });
+interface FormProps {
+  setStep: (step: number) => void;
+}
 
-        let result;
+export default function Form({ setStep }: FormProps) {
+  // const { step, setStep } = useStep();
+  const [loading, setLoading] = useState(false);
 
-        try {
-          result = await response.json();
-        } catch (jsonError) {
-          console.error("Could not parse JSON response:", jsonError);
-          throw new Error("Invalid server response");
-        }
-
-        if (response.ok) {
-          console.log("Order saved successfully:", result.message);
-          setStep(step + 1);
-        } else {
-          console.error(
-            "Server responded with an error:",
-            result.error || "Unknown error"
-          );
-        }
-      } catch (error) {
-        if (error instanceof Error) {
-          console.log(error);
-          console.error("Error submitting order:", error.message);
-        } else {
-          console.error("Error submitting order:", error);
-        }
-      }
-    },
-    validate: (values) => {
-      const errors: Partial<typeof values> = {};
-      if (!values.fullName) errors.fullName = "Full name is required";
-      if (!values.email) errors.email = "Email is required";
-      if (!values.address) errors.address = "Address is required";
-      if (!values.state) errors.state = "State is required";
-      if (!values.city) errors.city = "City is required";
-      return errors;
-    },
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<OrderForm>({
+    resolver: zodResolver(OrderSchema),
   });
+
+  const onSubmit = async (data: OrderForm) => {
+    console.log("Submitting values:", data);
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/submit-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        console.log("Order saved successfully:", result.message);
+        // setStep(prev => prev + 1);
+        setStep(2); // Proceed to the next step
+      } else {
+        console.error("Server error:", result.error);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="container-sm mx-auto pt-[120px] pb-[200px]">
@@ -78,7 +72,7 @@ export default function Form() {
             width={500}
             height={500}
             alt="icon"
-            className="object-contain w-[32px] h-[32px] text-center"
+            className="object-contain w-[32px] h-[32px]"
           />
         </span>
         <h1 className="font-semibold text-[24px] text-[#4A4A4A]">
@@ -86,53 +80,42 @@ export default function Form() {
         </h1>
       </div>
 
-      <form onSubmit={formik.handleSubmit}>
-        <div className="mx-auto max-w-[358px] lg:min-w-[711px] h-auto bg-[#F4F4F4] rounded-[5px]">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="mx-auto max-w-[358px] lg:min-w-[711px] bg-[#F4F4F4] rounded-[5px]">
           <div className="py-[32px] px-[18px] lg:p-[52px] flex flex-col gap-4">
             <InputField
-              name="fullName"
               label="Name"
-              value={formik.values.fullName}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.touched.fullName ? formik.errors.fullName : null}
+              {...register("fullName")}
+              error={errors.fullName?.message}
             />
 
             <InputField
-              name="email"
               label="Email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.touched.email ? formik.errors.email : null}
+              {...register("email")}
+              error={errors.email?.message}
             />
 
             <InputField
-              name="address"
               label="Address"
-              value={formik.values.address}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              error={formik.touched.address ? formik.errors.address : null}
+              {...register("address")}
+              error={errors.address?.message}
             />
 
-            <div className="flex items-start justify-start gap-[30px]">
+            <div className="flex gap-[30px]">
               <div className="flex-1">
-                <InputField
-                  name="phoneNumber"
-                  label="Phone Number"
-                  value={formik.values.phoneNumber}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                />
+              <InputField
+                label="Phone Number"
+                {...register("phoneNumber")}
+                error={errors.phoneNumber?.message}
+              />
               </div>
+
               <div className="flex-1 hidden lg:block">
+                
                 <InputField
-                  name="alternativePhoneNumber"
-                  label="AlternativePhoneNumber"
-                  value={formik.values.alternativePhoneNumber}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
+                  label="Alternative Phone Number"
+                  {...register("alternativePhoneNumber")}
+                  error={errors.alternativePhoneNumber?.message}
                 />
               </div>
             </div>
@@ -140,20 +123,17 @@ export default function Form() {
             <div className="flex gap-[30px]">
               <div className="flex-1">
                 <InputField
-                  name="state"
                   label="State"
-                  value={formik.values.state}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
+                  {...register("state")}
+                  error={errors.state?.message}
                 />
               </div>
+
               <div className="flex-1">
                 <InputField
-                  name="city"
                   label="City"
-                  value={formik.values.city}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
+                  {...register("city")}
+                  error={errors.city?.message}
                 />
               </div>
             </div>
@@ -162,8 +142,10 @@ export default function Form() {
               <Button
                 style="primary"
                 type="submit"
+                disabled={isSubmitting}
                 css="w-[182px] h-[48px] rounded-[5px]"
-                fn={() => setStep(step + 1)}
+                loading={loading || isSubmitting}
+                // fn={()=> setStep(2)}
               >
                 Proceed to Payment
               </Button>

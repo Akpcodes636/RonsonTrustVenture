@@ -13,14 +13,15 @@ async function dbConnect() {
   }
 
   try {
-    const db = await mongoose.connect(process.env.MONGODB_URI, {
+    const db = await mongoose.connect(process.env.MONGODB_URI!, {
       dbName: "dbManitowocOrders",
-      // Add these connection options for improved stability
       serverSelectionTimeoutMS: 5000,
-      retryWrites: true,
+      maxPoolSize: 10,
       socketTimeoutMS: 45000,
-      maxPoolSize: 10, // Limit connection pool size
+      family: 4
     });
+    
+
 
     connection.isConnected = db.connections[0].readyState;
 

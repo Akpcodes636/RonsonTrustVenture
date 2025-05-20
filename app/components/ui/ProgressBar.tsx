@@ -1,12 +1,14 @@
 "use client";
 import Image from "next/image";
-import { useStep } from "../../zustand/store";
 import { stepsContent } from "../utils/contents/HomePage.content";
 import React from "react";
 
-export default function BookingProgress() {
-  const { step } = useStep();
+interface BookingProgressProps {
+  step: number;
+  setStep: (step: number) => void;
+}
 
+export default function BookingProgress({ step, setStep }: BookingProgressProps) {
   return (
     <div className="container-sm mx-auto pt-[80px]">
       {/* Progress Bar */}
@@ -14,14 +16,17 @@ export default function BookingProgress() {
         <div className="w-full flex items-center">
           {stepsContent.map((stepItem, index) => (
             <React.Fragment key={index}>
-              <div className="relative flex flex-col items-center">
+              <div
+                className="relative flex flex-col items-center cursor-pointer"
+                onClick={() => setStep(index + 1)} // Optional: allow click to jump steps
+              >
                 <div
                   className={`rounded-full transition duration-500 ease-in-out border-2 h-[24px] w-[24px] flex items-center justify-center text-[11px] ${
                     index + 1 < step
-                      ? "border-[#B81A14] bg-[#B81A14] text-white" // completed step
+                      ? "border-[#B81A14] bg-[#B81A14] text-white"
                       : index + 1 === step
-                        ? "border-[#B81A14] text-[#333333] bg-[#F8E8E8]" // current step
-                        : "border-[#B81A14] text-[#333333] bg-[#F8E8E8]" // future step
+                        ? "border-[#B81A14] text-[#333333] bg-[#F8E8E8]"
+                        : "border-[#B81A14] text-[#333333] bg-[#F8E8E8]"
                   }`}
                 >
                   <Image
@@ -36,13 +41,12 @@ export default function BookingProgress() {
                   {stepItem.text}
                 </div>
               </div>
-              {/* Only render the line if it's not the last item */}
               {index < stepsContent.length - 1 && (
                 <div
                   className={`flex-auto border-[1px] transition duration-500 ease-in-out ${
                     index + 1 < step
-                      ? "border-[#B81A14]" // completed line
-                      : "border-[#F8E8E8]" // future line
+                      ? "border-[#B81A14]"
+                      : "border-[#F8E8E8]"
                   }`}
                 />
               )}
