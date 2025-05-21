@@ -1,4 +1,4 @@
-import * as Yup from "yup";
+
 export const OrderSchema = Yup.object().shape({
   fullName: Yup.string().required("Full name is required"),
   email: Yup.string()
