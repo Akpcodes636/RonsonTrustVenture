@@ -1,6 +1,6 @@
 // pages/api/products.ts
 import type { NextApiRequest, NextApiResponse } from "next";
-import { connectToDatabase } from "../lib/mongodb"; // make sure this exists
+import { connectToDatabase } from "../../lib/mongodb"; // make sure this exists
 
 export default async function handler(
   req: NextApiRequest,

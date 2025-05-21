@@ -2,11 +2,15 @@
 
 import { useRouter } from "next/navigation";
 
-export default function OrderButton() {
+interface OrderButtonProps {
+  slug: string;  // receive slug as a prop
+}
+
+export default function OrderButton({ slug }: OrderButtonProps) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("/delivery");
+    router.push(`/delivery?slug=${slug}`);
   };
 
   return (

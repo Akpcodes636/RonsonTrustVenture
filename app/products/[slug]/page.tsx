@@ -120,7 +120,8 @@ export default function ProductDetailsPage() {
                   },
                 }}
               />
-              <OrderButton />
+              {product?.slug?.current && <OrderButton slug={product.slug.current} />}
+
             </div>
           </div>
         ) 

@@ -18,7 +18,6 @@ const useSanityProduct = (slug: string) => {
           `*[_type == "product" && slug.current == $slug][0]{
             name,
             price,
-            quantity,
           }`,
           { slug }
         );

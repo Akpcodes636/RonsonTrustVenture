@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import { useSearchParams } from 'next/navigation'
 
 // 1. Create Zod schema
 const OrderSchema = z.object({
@@ -25,6 +26,10 @@ interface FormProps {
 }
 
 export default function Form({ setStep }: FormProps) {
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("slug");
+  console.log("Slug from URL:", slug);
+  
   
   const [loading, setLoading] = useState(false);
 
@@ -44,7 +49,7 @@ export default function Form({ setStep }: FormProps) {
       const response = await fetch("/api/submit-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify( data),
       });
 
       const result = await response.json();

@@ -1,21 +1,29 @@
 "use client";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Button from "../ui/Button";
 import useSanityProduct from "@/app/hooks/useSanityOrder";
-// import useMongoProducts from '@/app/hooks/useMongoProducts';
-import { useRouter } from "next/router";
+import useDeliveryInfo from "@/app/hooks/useDeliveryInfo";
+
+
+
 
 interface ConfirmOrderProps {
   setStep: (step: number) => void;
 }
 
 export default function ConfirmOrder({ setStep }: ConfirmOrderProps) {
-// const { products,error } = useMongoProducts();
+const searchParams = useSearchParams();
+const slug = searchParams.get("slug");
+const {deliveryInfo} = useDeliveryInfo(slug);
+console.log(slug);
+console.log(deliveryInfo);
 
-const router = useRouter();
-const { slug } = router.query;
+
 
 const { product} = useSanityProduct(slug as string);
+console.log(product);
+
   // console.log("Sanity Order:", order);
   return (
     <div className="pt-16 md:pt-24 lg:pt-[120px] pb-20 md:pb-32 lg:pb-[200px] px-4 md:px-6">
@@ -70,16 +78,15 @@ const { product} = useSanityProduct(slug as string);
               </h2>
             </div>
             <p className="font-normal text-sm md:text-base lg:text-[16px] leading-tight text-[#4A4A4A]">
-              John Doe
+            {deliveryInfo?.fullName || "Full name not available"}
             </p>
             <p className="font-normal text-sm md:text-base lg:text-[16px] leading-tight text-[#4A4A4A] mb-3 md:mb-4 lg:mb-[14px]">
-              +234 00 00000 000
+            {deliveryInfo?.phoneNumber || "Phone number not available"}
             </p>
             <div className="flex flex-row justify-between gap-2 sm:gap-4">
               <div className="max-w-full flex-1 sm:max-w-[250px] md:max-w-[300px] lg:max-w-[401px]">
                 <p className="font-normal text-sm md:text-base lg:text-[16px] text-[#4A4A4A]">
-                  The Mansion, Mosheshe Estate, Airport Road, Effurun, Warri,
-                  Delta. Nigeria
+                {deliveryInfo?.address || "Address not available"}
                 </p>
               </div>
               <div className="text-right flex-none">

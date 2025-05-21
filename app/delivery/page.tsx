@@ -7,10 +7,14 @@ import ThankYou from "../components/Delivery/Thankyou";
 import Footer from "../components/footer";
 import ProductHero from "../components/Products/ProductHero";
 import BookingProgress from "../components/ui/ProgressBar";
+import { useSearchParams } from "next/navigation";
 
 const STORAGE_KEY = "delivery_step";
 
 export default function DeliveryPage() {
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("slug");
+  console.log(slug);
   const [step, setStep] = useState<number>(0);
 
   // On mount, read saved step from sessionStorage (or start at 0)
@@ -49,7 +53,7 @@ export default function DeliveryPage() {
   return (
     <>
       <ProductHero />
-      <BookingProgress step={step} setStep={setStep}  />
+      <BookingProgress step={step} setStep={setStep} />
       {displaySteps()}
       <Footer />
     </>
