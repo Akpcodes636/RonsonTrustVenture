@@ -37,7 +37,6 @@ export default async function FeaturedProducts() {
             return (
               <ProductCard
                 key={product._id}
-                id={Number(product._id)}
                 title={product.name}
                 price={String(product.price)}
                 image={imageUrl}
