@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Button from "../ui/Button";
-import { useStep } from "@/app/zustand/store";
 import useSanityProduct from "@/app/hooks/useSanityOrder";
 import useMongoProducts from '@/app/hooks/useMongoProducts';
 import { useRouter } from "next/router";
@@ -11,15 +10,13 @@ interface ConfirmOrderProps {
 }
 
 export default function ConfirmOrder({ setStep }: ConfirmOrderProps) {
-const { products,error } = useMongoProducts();
+// const { products,error } = useMongoProducts();
 
 const router = useRouter();
 const { slug } = router.query;
 
-const { product, loading } = useSanityProduct(slug as string);
+const { product} = useSanityProduct(slug as string);
   // console.log("Sanity Order:", order);
-
-  // const { step, setStep } = useStep();
   return (
     <div className="pt-16 md:pt-24 lg:pt-[120px] pb-20 md:pb-32 lg:pb-[200px] px-4 md:px-6">
       <div className="flex items-center gap-3 md:gap-[18px] justify-center mb-6 md:mb-8 lg:mb-[32px]">

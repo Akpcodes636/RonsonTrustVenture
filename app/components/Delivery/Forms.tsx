@@ -2,7 +2,6 @@
 import Image from "next/image";
 import InputField from "../ui/InputField";
 import Button from "../ui/Button";
-import { useStep } from "@/app/zustand/store";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,7 +25,7 @@ interface FormProps {
 }
 
 export default function Form({ setStep }: FormProps) {
-  // const { step, setStep } = useStep();
+  
   const [loading, setLoading] = useState(false);
 
   const {

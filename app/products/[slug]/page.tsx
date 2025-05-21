@@ -1,5 +1,4 @@
 "use client";
-
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getProductBySlug } from "../../lib/sanity";
@@ -14,16 +13,14 @@ import { RiLoader4Fill } from "react-icons/ri";
 import type { Product } from "../../types";
 
 export default function ProductDetailsPage() {
-  const { slug } = useParams(); // ✅ Get params from URL
+  const { slug } = useParams(); 
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProduct() {
       try {
         if (!slug || typeof slug !== "string") return;
-        setError(null);
         const productData = await getProductBySlug(slug);
         if (!productData || (Array.isArray(productData) && productData.length === 0)) {
           setProduct(null);
@@ -32,7 +29,6 @@ export default function ProductDetailsPage() {
         }
       } catch (err) {
         console.error("Error fetching product:", err);
-        setError(err instanceof Error ? err.message : "Failed to load product");
       } finally {
         setLoading(false);
       }

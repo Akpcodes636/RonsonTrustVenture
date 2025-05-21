@@ -1,11 +1,8 @@
 "use client";
-import { useStep } from "@/app/zustand/store";
 import Image from "next/image";
 import Button from "../ui/Button";
 
 export default function Payment({ setStep }: { setStep: (step: number) => void }) {
-  // const { step, setStep } = useStep();
-
   return (
     <div className="pt-[120px] pb-[200px]">
       <div className="flex items-center gap-[18px] justify-center mb-[32px]">
