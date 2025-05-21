@@ -1,31 +1,26 @@
 // lib/mongodb.ts
 import { MongoClient } from 'mongodb';
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
+// Augment the NodeJS global type to include _mongoClientPromise
 declare global {
-  namespace NodeJS {
-    interface GlobalThis {
-      _mongoClientPromise?: Promise<MongoClient>;
-    }
-  }
+  // eslint-disable-next-line no-var
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
-
 
 const uri = process.env.MONGODB_URI!;
 const options = {};
 
 let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
 
-
-if (!(globalThis as NodeJS.GlobalThis)._mongoClientPromise) {
+if (!global._mongoClientPromise) {
   client = new MongoClient(uri, options);
-  (globalThis as NodeJS.GlobalThis)._mongoClientPromise = client.connect();
+  global._mongoClientPromise = client.connect();
 }
-clientPromise = (globalThis as NodeJS.GlobalThis)._mongoClientPromise!;
+
+const clientPromise = global._mongoClientPromise;
 
 export async function connectToDatabase() {
-  const client = await clientPromise;
-  const db = client.db('yourDatabaseName');
+  const client = await clientPromise!;
+  const db = client.db('yourDatabaseName'); // replace with your DB name
   return { client, db };
 }

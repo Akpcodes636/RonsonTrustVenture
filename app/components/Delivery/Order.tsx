@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Button from "../ui/Button";
 import useSanityProduct from "@/app/hooks/useSanityOrder";
-import useMongoProducts from '@/app/hooks/useMongoProducts';
+// import useMongoProducts from '@/app/hooks/useMongoProducts';
 import { useRouter } from "next/router";
 
 interface ConfirmOrderProps {
