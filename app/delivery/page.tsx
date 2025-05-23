@@ -14,7 +14,9 @@ const STORAGE_KEY = "delivery_step";
 export default function DeliveryPage() {
   const searchParams = useSearchParams();
   const slug = searchParams.get("slug");
+  // const orderId = searchParams.get("orderId");
   console.log(slug);
+  // console.log(orderId);
   const [step, setStep] = useState<number>(0);
 
   // On mount, read saved step from sessionStorage (or start at 0)

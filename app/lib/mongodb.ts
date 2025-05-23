@@ -1,26 +1,54 @@
-// lib/mongodb.ts
-import { MongoClient } from 'mongodb';
 
-// Augment the NodeJS global type to include _mongoClientPromise
-declare global {
-  // eslint-disable-next-line no-var
-  var _mongoClientPromise: Promise<MongoClient> | undefined;
+import mongoose from "mongoose";
+
+const connection: { isConnected?: number } = {};
+
+async function dbConnect() {
+  if (connection.isConnected) {
+    console.log("Using existing database connection");
+    return;
+  }
+
+  if (!process.env.MONGODB_URI) {
+    throw new Error("MONGODB_URI is not defined in environment variables");
+  }
+
+  try {
+    const db = await mongoose.connect(process.env.MONGODB_URI, {
+      dbName: "manitowocOrders",
+      // Add these connection options for improved stability
+      serverSelectionTimeoutMS: 5000,
+      retryWrites: true,
+      socketTimeoutMS: 45000,
+      maxPoolSize: 10, // Limit connection pool size
+    });
+
+    connection.isConnected = db.connections[0].readyState;
+
+    // Add error handling for the connection
+    mongoose.connection.on("error", (err) => {
+      console.error("MongoDB connection error:", err);
+      connection.isConnected = 0;
+    });
+
+    console.log("Database connected");
+  } catch (error) {
+    console.error("Failed to connect to the database", error);
+    connection.isConnected = 0;
+    throw new Error("Database connection error");
+  }
 }
 
-const uri = process.env.MONGODB_URI!;
-const options = {};
-
-let client: MongoClient;
-
-if (!global._mongoClientPromise) {
-  client = new MongoClient(uri, options);
-  global._mongoClientPromise = client.connect();
+async function dbDisconnect() {
+  if (connection.isConnected) {
+    try {
+      await mongoose.disconnect();
+      connection.isConnected = 0;
+      console.log("Database disconnected");
+    } catch (error) {
+      console.error("Error while disconnecting from database", error);
+    }
+  }
 }
 
-const clientPromise = global._mongoClientPromise;
-
-export async function connectToDatabase() {
-  const client = await clientPromise!;
-  const db = client.db('yourDatabaseName'); // replace with your DB name
-  return { client, db };
-}
+export { dbConnect, dbDisconnect, connection };

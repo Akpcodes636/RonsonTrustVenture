@@ -1,4 +1,3 @@
-// hooks/useDeliveryInfo.ts
 import { useEffect, useState } from "react";
 
 export interface OrderDeliveryInfo {
@@ -19,7 +18,7 @@ export default function useDeliveryInfo(slug: string | null) {
       setError("");
 
       try {
-        const res = await fetch(`/api/orders/${slug}`);
+        const res = await fetch(`/api/order/${slug}`);
         if (!res.ok) {
           throw new Error(`Failed to fetch delivery info: ${res.status} ${res.statusText}`);
         }

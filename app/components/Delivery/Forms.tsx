@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 
 // 1. Create Zod schema
 const OrderSchema = z.object({
@@ -29,8 +29,7 @@ export default function Form({ setStep }: FormProps) {
   const searchParams = useSearchParams();
   const slug = searchParams.get("slug");
   console.log("Slug from URL:", slug);
-  
-  
+
   const [loading, setLoading] = useState(false);
 
   const {
@@ -44,19 +43,29 @@ export default function Form({ setStep }: FormProps) {
   const onSubmit = async (data: OrderForm) => {
     console.log("Submitting values:", data);
     setLoading(true);
-
+  
     try {
-      const response = await fetch("/api/submit-order", {
+      const response = await fetch("/api/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify( data),
+        body: JSON.stringify(data),
       });
-
+  
       const result = await response.json();
+      console.log(response);
+  
       if (response.ok) {
         console.log("Order saved successfully:", result.message);
-        // setStep(prev => prev + 1);
-        setStep(2); // Proceed to the next step
+  
+        const orderId = result.orderId;
+        sessionStorage.setItem("orderId", orderId); // Optional if you want to reuse it later
+  
+        // Update the URL without reloading the page
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set("orderId", orderId);
+        window.history.pushState({}, "", currentUrl);
+  
+        setStep(2); // Proceed to the Payment step
       } else {
         console.error("Server error:", result.error);
       }
@@ -66,6 +75,7 @@ export default function Form({ setStep }: FormProps) {
       setLoading(false);
     }
   };
+  
 
   return (
     <div className="container-sm mx-auto pt-[120px] pb-[200px]">
@@ -107,15 +117,14 @@ export default function Form({ setStep }: FormProps) {
 
             <div className="flex gap-[30px]">
               <div className="flex-1">
-              <InputField
-                label="Phone Number"
-                {...register("phoneNumber")}
-                error={errors.phoneNumber?.message}
-              />
+                <InputField
+                  label="Phone Number"
+                  {...register("phoneNumber")}
+                  error={errors.phoneNumber?.message}
+                />
               </div>
 
               <div className="flex-1 hidden lg:block">
-                
                 <InputField
                   label="Alternative Phone Number"
                   {...register("alternativePhoneNumber")}
