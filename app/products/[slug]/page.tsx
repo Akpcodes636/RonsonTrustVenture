@@ -75,7 +75,7 @@ export default function ProductDetailsPage() {
               </div>
 
               {/* Gallery Images */}
-              <div className="flex flex-col sm:flex-row justify-start gap-4">
+              <div className="flex flex-row justify-start gap-4">
                 {product?.image2?.asset?.url ? (
                   <>
                     {[1, 2].map((_, idx) => (
