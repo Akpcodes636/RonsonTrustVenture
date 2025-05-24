@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, text, image, price,slug })
       {text}
     </p>
     <p className="text-[18px] lg:text-[20px] font-bold leading-[100%] text-center text-gray-900 mb-6">
-      {price}
+      ${price}
     </p>
     <div className="flex justify-center">
       <Button
