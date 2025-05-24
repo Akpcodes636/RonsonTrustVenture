@@ -1,5 +1,5 @@
 // app/delivery/page.tsx
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import DeliveryPageClient from "./DeliveryPageClient"; // Adjust the path as needed
 
 type PageProps = {
