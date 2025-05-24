@@ -1,11 +1,11 @@
 // app/delivery/page.tsx
-import DeliveryPageClient from "./DeliveryPageClient";
+import { Metadata } from "next";
 
-export default function DeliveryPage({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) {
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+export default function DeliveryPage({ searchParams }: PageProps) {
   const slugParam = searchParams?.slug;
   const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam ?? null;
 
