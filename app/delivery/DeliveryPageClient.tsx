@@ -12,7 +12,7 @@ import Footer from "../components/footer";
 
 const STORAGE_KEY = "delivery_step";
 
-export default function DeliveryPageClient({ slug }: { slug: string | null }) {
+export default function DeliveryPageClient() {
   const [step, setStep] = useState<number>(0);
 
   useEffect(() => {
