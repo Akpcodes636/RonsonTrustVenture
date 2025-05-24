@@ -126,10 +126,10 @@ const Footer = () => {
   const ServicesLinks = () => (
     <>
       <Link href="/booking" className="text-[#000000]">
-        Mawitoma 4100
+        Manitowoc 4100
       </Link>
       <Link href="/booking" className="text-[#000000]">
-        Mawitoma 4200
+        Manitowoc 4200
       </Link>
     </>
   );

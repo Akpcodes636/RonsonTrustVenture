@@ -20,6 +20,28 @@
       template: "%s | Ronson Trust Ventures"
     },
     description: "Buy Genuine Manitowoc Spare Parts from a trusted, reliable dealer. Fast shipping, guaranteed authenticity, and expert support for all your Manitowoc equipment needs.",
+    keywords: [
+      "Manitowoc spare parts",
+      "Genuine Manitowoc parts",
+      "Original Manitowoc equipment parts",
+      "Buy Manitowoc parts online",
+      "Trusted Manitowoc parts supplier",
+      "Ronson Trust Ventures",
+      "Manitowoc crane replacement parts",
+      "Heavy equipment parts supplier",
+      "Fast shipping Manitowoc parts",
+      "Authentic Manitowoc components",
+      "Manitowoc parts dealer Nigeria",
+      "Reliable Manitowoc parts distributor",
+      "Industrial crane parts supplier",
+      "Manitowoc equipment parts expert support",
+      "Order Manitowoc parts online",
+      "Affordable Manitowoc spare parts",
+      "OEM Manitowoc parts",
+      "Best Manitowoc parts seller",
+      "Manitowoc crane spare parts",
+      "Ronson Manitowoc parts supplier"
+    ],
     icons: {
       icon: "/favicon.ico",
       shortcut: "/favicon-32x32.png",
