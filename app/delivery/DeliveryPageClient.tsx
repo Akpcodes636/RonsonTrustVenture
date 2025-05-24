@@ -9,10 +9,10 @@ import ProductHero from "../components/Products/ProductHero";
 import BookingProgress from "../components/ui/ProgressBar";
 import Footer from "../components/footer";
 
-
 const STORAGE_KEY = "delivery_step";
 
-export default function DeliveryPageClient() {
+export default function DeliveryPageClient({ slug }: { slug: string | null }) {
+  void slug;
   const [step, setStep] = useState<number>(0);
 
   useEffect(() => {
