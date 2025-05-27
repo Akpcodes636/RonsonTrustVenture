@@ -3,20 +3,6 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 
-interface  setCustomerInfo {
-  name: string;
-  email: string;
-  phone: string;
-}
-
-interface PaymentProps {
-  setStep: (step: number) => void;
-  setCustomerInfo: {
-    name: string;
-    email: string;
-    phone: string;
-  } | null;
-}
 
 
 interface PaystackProps {

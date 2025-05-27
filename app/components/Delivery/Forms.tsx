@@ -29,7 +29,7 @@ interface FormProps {
 
 export default function Form({ setStep, setCustomerInfo }: FormProps) {
   const searchParams = useSearchParams();
-  const slug = searchParams.get("slug");
+  // const slug = searchParams.get("slug");
 
   const [loading, setLoading] = useState(false);
   const [paymentData, setPaymentData] = useState<{
