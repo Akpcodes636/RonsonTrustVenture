@@ -3,7 +3,31 @@ import { useEffect } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
 
+interface PaystackResponse {
+  reference: string;
+  // add more properties if needed
+}
 
+interface PaystackPop {
+  setup: (options: {
+    key: string;
+    email: string;
+    amount: number;
+    currency: string;
+    ref: string;
+    callback: (response: PaystackResponse) => void | Promise<void>;
+    onClose?: () => void;
+  }) => {
+    openIframe: () => void;
+  };
+}
+
+// Extend the Window interface for PaystackPop
+declare global {
+  interface Window {
+    PaystackPop?: PaystackPop;
+  }
+}
 
 interface PaystackProps {
   reference: string;
@@ -31,14 +55,19 @@ export default function Payment({
   }, []);
 
   const payWithPaystack = () => {
-    const handler = (window as any).PaystackPop.setup({
+    if (!window.PaystackPop) {
+      alert("Paystack is not loaded yet. Please try again in a moment.");
+      return;
+    }
+
+    const handler = window.PaystackPop.setup({
       key: "pk_test_b750c29e9f96a829b20f230c4d5c996964972858",
       email,
       amount,
       currency: "NGN",
-      ref: reference, // use the one from backend, not random
+      ref: reference,
 
-      callback: async (response: any) => {
+      callback: async (response: PaystackResponse) => {
         alert("Payment Successful! Ref: " + response.reference);
 
         try {
@@ -83,7 +112,7 @@ export default function Payment({
           Payment Details
         </h1>
       </div>
-      <div className="mx-auto max-w-[358px]  lg:min-w-[711px] h-[536px] bg-[#F4F4F4] rounded-[5px]">
+      <div className="mx-auto max-w-[358px] lg:min-w-[711px] h-[536px] bg-[#F4F4F4] rounded-[5px]">
         <div className="p-[52px]">
           <h1>Hello, {fullName}</h1>
           <Button
