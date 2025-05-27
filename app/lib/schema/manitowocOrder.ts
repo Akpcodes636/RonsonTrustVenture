@@ -21,8 +21,9 @@ const OrderSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    alternativePhoneNumber: {
-      type: String,
+    amount: {
+      type: Number,
+      required: true,
     },
     state: {
       type: String,
@@ -31,6 +32,29 @@ const OrderSchema = new mongoose.Schema(
     city: {
       type: String,
       required: true,
+    },
+    status: {
+      type: String,
+      enum: ["pending", "awaiting", "paid", "failed"],
+      default: "pending",
+    },
+    paystackReference: {
+      type: String,
+      unique: true,
+      sparse: true, // allows multiple nulls
+    },
+    transactionId: {
+      type: String,
+      unique: true,
+      sparse: true,
+    },
+    paymentMethod: {
+      type: String,
+      enum: ["card", "bank_transfer", "ussd", "qr", "mobile_money", "bank"],
+      default: "card",
+    },
+    paidAt: {
+      type: Date,
     },
   },
   { timestamps: true },

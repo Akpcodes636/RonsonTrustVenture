@@ -1,13 +1,15 @@
 // app/delivery/page.tsx
-// import { Metadata } from "next";
-import DeliveryPageClient from "./DeliveryPageClient"; // Adjust the path as needed
+// app/delivery/page.tsx
+import DeliveryPageClient from "./DeliveryPageClient";
 
 type PageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 };
 
-export default function DeliveryPage({ searchParams }: PageProps) {
-  const slugParam = searchParams?.slug;
+export default async function DeliveryPage({ searchParams }: PageProps) {
+  // Await the searchParams promise
+  const resolvedSearchParams = await searchParams;
+  const slugParam = resolvedSearchParams?.slug;
   const slug = Array.isArray(slugParam) ? slugParam[0] : slugParam ?? null;
 
   return <DeliveryPageClient slug={slug} />;
