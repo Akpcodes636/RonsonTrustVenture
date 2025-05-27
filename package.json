@@ -27,6 +27,7 @@
     "react-hook-form": "^7.56.4",
     "react-icon": "^1.0.0",
     "react-icons": "^5.4.0",
+    "react-is": "^19.1.0",
     "react-paystack": "^6.0.0",
     "react-slick": "^0.30.3",
     "react-slideshow-image": "^4.3.2",
