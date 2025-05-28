@@ -1,11 +1,15 @@
 // Querying with "sanityFetch" will keep content automatically updated
 // Before using it, import and render "<SanityLive />" in your layout, see
-// https://github.com/sanity-io/next-sanity#live-content-api for more information.
+// lib/live.ts (or wherever your live config is)
 import { defineLive } from "next-sanity";
-import { client } from '../lib/client'
+import { createClient } from '@sanity/client'
 
+// Create client directly in defineLive to avoid type conflicts
 export const { sanityFetch, SanityLive } = defineLive({
-  client: client.withConfig({
-    apiVersion: 'vX'
-  }) as any // Type assertion to bypass the error
+  client: createClient({
+    projectId: 'j911shvx',
+    dataset: 'production', // Your dataset name
+    apiVersion: 'vX',
+    useCdn: false, // Important for live content
+  })
 });
