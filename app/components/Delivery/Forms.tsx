@@ -6,6 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { PaystackButton } from "react-paystack";
+import Loader from "../ui/Loader";
 
 const OrderSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -27,8 +28,6 @@ interface FormProps {
 }
 
 export default function Form({ setStep, setCustomerInfo }: FormProps) {
-  // const slug = searchParams.get("slug");
-
   const [loading, setLoading] = useState(false);
   const [paymentData, setPaymentData] = useState<{
     email: string;
@@ -152,18 +151,20 @@ export default function Form({ setStep, setCustomerInfo }: FormProps) {
 
             <div className="mt-6 flex justify-center">
               {paymentData ? (
-                <PaystackButton
-                  email={paymentData.email}
-                  amount={paymentData.amount}
-                  publicKey={publicKey}
-                  text="Pay Now"
-                  onSuccess={() => {
-                    console.log("✅ Payment successful");
-                    setStep(3);
-                  }}
-                  onClose={() => console.log("Payment popup closed")}
-                  className="bg-green-600 text-white px-6 py-2 rounded-[5px]"
-                />
+                <div className="animate-fadeInUp">
+                  <PaystackButton
+                    email={paymentData.email}
+                    amount={paymentData.amount}
+                    publicKey={publicKey}
+                    text="Pay Now"
+                    onSuccess={() => {
+                      console.log("✅ Payment successful");
+                      setStep(3);
+                    }}
+                    onClose={() => console.log("Payment popup closed")}
+                    className="bg-green-600 text-white px-6 py-2 rounded-[5px]"
+                  />
+                </div>
               ) : (
                 <button
                   type="submit"
@@ -171,7 +172,7 @@ export default function Form({ setStep, setCustomerInfo }: FormProps) {
                   className="bg-[#B81A14] text-white w-[182px] h-[48px] rounded-[5px] disabled:opacity-60"
                 >
                   {loading || isSubmitting
-                    ? "Submitting..."
+                    ? <Loader />
                     : "Proceed to Payment"}
                 </button>
               )}

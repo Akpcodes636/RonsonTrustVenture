@@ -44,8 +44,8 @@
     ],
     icons: {
       icon: "/favicon.ico",
-      shortcut: "/favicon-32x32.png",
-      apple: "/apple-touch-icon.png",
+      shortcut: "image/favicon-32x32.png",
+      apple: "image/apple-touch-icon.png",
     },
     manifest: "/site.webmanifest",
   }
@@ -56,7 +56,7 @@
     children: React.ReactNode;
   }) {
     return (
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning={true}>
         <body className={`${inter.variable} ${openSans.variable} antialiased hide-scroll`}>
           {children}
         </body>

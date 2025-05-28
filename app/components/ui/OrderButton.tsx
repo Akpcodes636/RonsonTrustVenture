@@ -16,7 +16,7 @@ export default function OrderButton({ slug }: OrderButtonProps) {
   return (
     <button
       onClick={handleClick}
-      className="w-full sm:w-[182px] h-[48px] bg-[#B81A14] text-white rounded-[5px] mt-8"
+      className="w-full h-[48px] bg-[#B81A14] text-white rounded-[5px] mt-8"
     >
       Order Now
     </button>
