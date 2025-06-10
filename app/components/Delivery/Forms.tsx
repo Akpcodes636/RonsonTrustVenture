@@ -3,6 +3,7 @@ import Image from "next/image";
 import InputField from "../ui/InputField";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { PaystackButton } from "react-paystack";
@@ -40,6 +41,7 @@ export default function Form({ setStep, setCustomerInfo }: FormProps) {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<OrderForm>({
     resolver: zodResolver(OrderSchema),
@@ -70,10 +72,14 @@ export default function Form({ setStep, setCustomerInfo }: FormProps) {
           amount: Number(data.amount) * 100,
           name: data.fullName,
         });
+        toast.success("Details submitted successfully!");
+        reset(); // Clear the form
       } else {
+        toast.error("Server error: " + result.error);
         console.error("Server error:", result.error);
       }
     } catch (error) {
+      toast.error("Something went wrong");
       console.error("Submission error:", error);
     } finally {
       setLoading(false);

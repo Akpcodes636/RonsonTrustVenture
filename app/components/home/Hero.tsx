@@ -67,8 +67,8 @@ export default function Hero() {
         data-aos="fade-up"
         data-aos-delay="400"
         className="border border-[#00000014]
- w-full max-w-[358px] md:max-w-[600px] lg:max-w-[1028px] min-h-[96px] lg:min-h-[176px] bg-white mx-auto rounded-[5px] shadow-lg 
- mt-[-88px] lg:mt-[-100px]"
+         w-full max-w-[358px] md:max-w-[600px] lg:max-w-[1028px] min-h-[96px] lg:min-h-[176px] bg-white mx-auto rounded-[5px] shadow-lg 
+         mt-[-88px] lg:mt-[-100px]"
       >
         <div className="px-4 py-4 lg:py-[33px] lg:px-[134px]">
           <div className="flex items-center justify-center gap-x-[24px] lg:gap-x-[180px]">

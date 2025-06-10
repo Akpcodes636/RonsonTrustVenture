@@ -1,6 +1,7 @@
   import { Inter, Open_Sans } from "next/font/google";
   import "./globals.css";
   import { Metadata } from "next";
+  import { Toaster } from 'sonner';
 
   const inter = Inter({
     variable: "--font-inter",
@@ -58,6 +59,7 @@
     return (
       <html lang="en" suppressHydrationWarning={true}>
         <body className={`${inter.variable} ${openSans.variable} antialiased hide-scroll`}>
+        <Toaster richColors position="top-center" />
           {children}
         </body>
       </html>
