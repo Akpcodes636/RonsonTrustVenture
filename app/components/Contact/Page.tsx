@@ -13,8 +13,8 @@ const SectionComponent = () => {
             Contact Us
           </h1>
           <p className="text-center font-normal text-[20px] leading-[30px] px-4 text-[#C8CED2]">
-            Have questions or need assistance? We&apos;re here to help! Reach out to
-            us, and our team will get back to you promptly.
+            Have questions or need assistance? We&apos;re here to help! Reach
+            out to us, and our team will get back to you promptly.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 items-center px-4 py-[50px]">
@@ -25,8 +25,8 @@ const SectionComponent = () => {
                   Get in Touch
                 </h1>
                 <p className="body-text max-w-[513px] text-[18px] leading-[30px] text-[#C8CED2]">
-                  We&apos;re here to help! Whether you have questions, or need more
-                  information, feel free to reach out to our team anytime.
+                  We&apos;re here to help! Whether you have questions, or need
+                  more information, feel free to reach out to our team anytime.
                 </p>
               </div>
               <div>
@@ -114,13 +114,11 @@ const SectionComponent = () => {
                   >
                     Message
                   </label>
-                  <textarea
-                    className="w-full h-[128px] rounded-[5px] bg-white border-[1px] border-[#70707066] resize-none p-4 focus:border-[#E72418] focus:outline-none"
-                  ></textarea>
+                  <textarea className="w-full h-[128px] rounded-[5px] bg-white border-[1px] border-[#70707066] resize-none p-4 focus:border-[#E72418] focus:outline-none"></textarea>
                 </div>
                 <div className="flex justify-center md:justify-start lg:justify-start">
                   <Button
-                   type="button"
+                    type="button"
                     css="w-[288px] h-[56px] flex items-center justify-center bg-[#E72418] hover:bg-[#E72418]/90 text-white"
                     style="primary"
                   >

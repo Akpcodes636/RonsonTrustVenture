@@ -3,6 +3,7 @@ export const fetchProductQuery = `*[_type == "product" && slug.current == $slug]
     name,
     price,
     quantity,
-    image
+    image,
+    inStock,
   }`
   

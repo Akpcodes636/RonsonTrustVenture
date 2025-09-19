@@ -7,12 +7,16 @@ import ProductHero from "../components/Products/ProductHero";
 import BookingProgress from "../components/ui/ProgressBar";
 import Footer from "../components/footer";
 import Payment from "../components/Delivery/Payment";
+import { Product } from "../types";
+import { getProductBySlug } from "../lib/sanity";
 
 const STORAGE_KEY = "delivery_step";
 
 export default function DeliveryPageClient({ slug }: { slug: string | null }) {
   void slug;
   const [step, setStep] = useState<number>(0);
+  const [product, setProduct] = useState<Product | null>(null);
+
 
   const [customerInfo, setCustomerInfo] = useState<{
     name: string;
@@ -34,6 +38,17 @@ export default function DeliveryPageClient({ slug }: { slug: string | null }) {
       sessionStorage.removeItem(STORAGE_KEY);
     };
   }, []);
+
+  // / Fetch product when slug changes
+useEffect(() => {
+  async function fetchProduct() {
+    if (!slug) return;
+    const res = await getProductBySlug(slug);
+    setProduct(res);
+  }
+  fetchProduct();
+}, [slug]);
+
 
   const displaySteps = () => {
     switch (step) {
@@ -58,6 +73,7 @@ export default function DeliveryPageClient({ slug }: { slug: string | null }) {
             email={customerInfo?.email || "default-email@example.com"}
             amount={1000} // Replace with the actual amount
             fullName={customerInfo?.name || "Default Name"}
+            productId={product?._id ?? ""}
           />
         );
       case 3:

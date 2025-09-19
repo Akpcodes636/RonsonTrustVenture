@@ -1,11 +1,14 @@
 // app/api/verify-payment/route.ts
 import { NextResponse } from 'next/server';
+import { markProductAsSold } from "@/app/lib/sanity";
+
+
 
 export async function POST(request: Request) {
   try {
-    const { reference } = await request.json();
+    const { reference, productId } = await request.json();
     
-    if (!reference) {
+    if (!reference || productId) {
       return NextResponse.json(
         { error: 'Payment reference is required' },
         { status: 400 }
@@ -31,6 +34,7 @@ export async function POST(request: Request) {
     }
 
     if (data.status && data.data.status === 'success') {
+      await markProductAsSold(productId); // Replace 'any' with actual productId if available
       // Payment is successful
       const paymentData = {
         reference: data.data.reference,
