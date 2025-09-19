@@ -99,13 +99,13 @@ const Footer = () => {
       <Link href="/" className="text-black">
         Home
       </Link>
-      <Link href="/about" className="text-black">
+      <Link href="/products" className="text-black">
         Products
       </Link>
-      <Link href="/service" className="text-black">
+      <Link href="/About" className="text-black">
         About Us
       </Link>
-      <Link href="/contact" className="text-black">
+      <Link href="/Contact" className="text-black">
         Contact
       </Link>
     </>
@@ -125,10 +125,10 @@ const Footer = () => {
   // Services Links Component
   const ServicesLinks = () => (
     <>
-      <Link href="/booking" className="text-[#000000]">
+      <Link href="/products" className="text-[#000000]">
         Manitowoc 4100
       </Link>
-      <Link href="/booking" className="text-[#000000]">
+      <Link href="/products" className="text-[#000000]">
         Manitowoc 4200
       </Link>
     </>

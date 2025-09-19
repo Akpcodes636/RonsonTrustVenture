@@ -3,10 +3,11 @@
 import { useRouter } from "next/navigation";
 
 interface OrderButtonProps {
-  slug: string;  // receive slug as a prop
+  slug: string; // receive slug as a prop
+  inStock: boolean;
 }
 
-export default function OrderButton({ slug }: OrderButtonProps) {
+export default function OrderButton({ slug, inStock }: OrderButtonProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -16,9 +17,10 @@ export default function OrderButton({ slug }: OrderButtonProps) {
   return (
     <button
       onClick={handleClick}
-      className="w-full h-[48px] bg-[#B81A14] text-white rounded-[5px] mt-8"
+      disabled={!inStock}
+      className={`w-full h-[48px] bg-[#B81A14] text-white rounded-[5px] mt-8 ${inStock ? "bg-[#B81A14] text-white" : "bg-gray-400 text-gray-700 cursor-not-allowed"} `}
     >
-      Order Now
+     {inStock ? "Order Now" : "Out of Stock"}
     </button>
   );
 }

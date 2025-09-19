@@ -2,6 +2,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Button from "../ui/Button";
+import { markProductAsSold } from "@/app/lib/sanity";
+import { toast } from "sonner";
 
 interface PaystackResponse {
   reference: string;
@@ -33,6 +35,7 @@ interface PaystackProps {
   reference: string;
   email: string;
   amount: number; // in kobo
+  productId: string;
   fullName: string;
   setStep: (step: number) => void;
 }
@@ -43,6 +46,7 @@ export default function Payment({
   amount,
   fullName,
   setStep,
+  productId,
 }: PaystackProps) {
   useEffect(() => {
     const script = document.createElement("script");
@@ -56,7 +60,7 @@ export default function Payment({
 
   const payWithPaystack = () => {
     if (!window.PaystackPop) {
-      alert("Paystack is not loaded yet. Please try again in a moment.");
+      toast("Paystack is not loaded yet. Please try again in a moment.");
       return;
     }
 
@@ -68,30 +72,31 @@ export default function Payment({
       ref: reference,
 
       callback: async (response: PaystackResponse) => {
-        alert("Payment Successful! Ref: " + response.reference);
+        toast("Payment Successful! Ref: " + response.reference);
 
         try {
           const res = await fetch("/api/verify-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ reference: response.reference }),
+            body: JSON.stringify({ reference: response.reference, productId }),
           });
 
           const result = await res.json();
           if (result.success) {
-            alert("Payment Verified on Backend!");
+            await markProductAsSold(productId); // pass _id of the product
+            toast("Payment Verified on Backend!");
             setStep(3);
           } else {
-            alert("Payment Verification Failed.");
+            toast("Payment Verification Failed.");
           }
         } catch (err) {
           console.error("Verification Error:", err);
-          alert("Could not verify payment. Try again later.");
+          toast("Could not verify payment. Try again later.");
         }
       },
 
       onClose: () => {
-        alert("Payment cancelled");
+        toast("Payment cancelled");
       },
     });
 

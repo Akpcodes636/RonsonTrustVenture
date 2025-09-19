@@ -14,7 +14,7 @@ interface ProductProps {
 }
 
 const ProductCard: React.FC<ProductProps> = ({ title, text, image, price,slug }) => {
-  console.log(slug);
+  // console.log(slug);
   const router = useRouter();
 
   const goToProductPage = () => {

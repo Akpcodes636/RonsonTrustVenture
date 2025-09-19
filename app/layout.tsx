@@ -59,7 +59,7 @@
     return (
       <html lang="en" suppressHydrationWarning={true}>
         <body className={`${inter.variable} ${openSans.variable} antialiased hide-scroll`}>
-        <Toaster richColors position="top-center" />
+        <Toaster richColors position="top-left" />
           {children}
         </body>
       </html>

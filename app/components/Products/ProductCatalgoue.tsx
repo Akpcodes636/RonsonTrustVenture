@@ -8,7 +8,7 @@ import { urlFor } from "../utils/image"; // Adjust the import path as needed
 
 export default async function ProductCatalogue() {
   const products: Product[] = await client.fetch(productQuery); // Fetch the product data from Sanity
-   console.log(products);
+  //  console.log(products);
   //  const imageUrl = product.image1?.asset ? urlFor(product.image1.asset).url() : '';
 
 
